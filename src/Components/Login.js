@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import '../Styles/Custom.css';
 import cloud from '../Images/cloud.png';
-import cloudpepper from '../Images/cloud-pepper.png';
+import cloudpepper from '../Images/sitelogo.png';
 import serverlessarch from '../Images/server-less-arch.png';
 import { Route, NavLink, Switch } from 'react-router-dom';
+import { browserHistory } from 'history'
 
 class Login extends Component {
 
-    PageLogin = (e) => {
-        console.log('testing');
+    constructor(props) {
+        super(props); 
+            this.PageLogin = this.PageLogin.bind(this); 
+    }
+
+    PageLogin(e) {
+        e.preventDefault();
+        this.props.history.push("/home");
     }
   render() {
-    return (
+      return (
         <div className="my-own-container">
             <div className="left-pannel" id ="over">
                 <img src={cloud} className="image-size-min"/> <br /> 
@@ -19,10 +26,10 @@ class Login extends Component {
             </div>
 
             <div className="right-pannel">
-                <div className="center-login-section"> 
+                <div className="center-login-section">  
                     <input className="login-style" type="text" name ="login" id ="login" placeholder="Type login id"/> <br />  <br />  
                     <input className="login-style"      type="password" name="password" id="password"  placeholder="Type password"/>  <br />   <br />  
-                    <button className="btn btn-primary" onClick={this.PageLogin}> Go !</button>
+                    <NavLink className="btn btn-primary" to = "/home" > Confirm Identity &amp; Go !</NavLink>
                 </div>         
             </div>
       </div>
@@ -30,3 +37,4 @@ class Login extends Component {
   }
 }
 export default Login;
+
