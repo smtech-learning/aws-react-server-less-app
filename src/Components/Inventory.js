@@ -1,8 +1,11 @@
 import React from 'react'
 
+import Menu from './Menu';
+
  function Inventory() {
   return (
-    <div>
+      <div>
+     
       Inventory goes here
     </div>
   )

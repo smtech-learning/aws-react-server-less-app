@@ -6,10 +6,10 @@ export default class Menu extends Component {
   render() {
     return (
      <div className="App-header">
-            <NavLink to="/inventory"> Inventory </NavLink> |
-            <NavLink to='/displayProducts'> Products Available </NavLink> |
-            <NavLink to='/logout'> Logout</NavLink> |
-            <NavLink to='/help'> Help</NavLink>
+            <NavLink to="/home/inventory"> Inventory </NavLink> |
+            <NavLink to='/home/displayProducts'> Products Available </NavLink> |
+            <NavLink to='/home/logout'> Logout</NavLink> |
+            <NavLink to='/home/help'> Help</NavLink>
     </div>
     )
   }

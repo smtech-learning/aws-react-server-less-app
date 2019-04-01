@@ -14,12 +14,10 @@ export default class Home extends Component {
         
       <div>
               <Menu />
-          {console.log(this.props.match.path)}
-              
-                <Route path="/inventory"  component={Inventory} />
-                <Route path='/displayProducts' exact component={DisplayProducts} />
-                <Route path='/help' exact component={Help} />
-                <Route path='/logout' exact component={Logout} />
+                <Route path="/home/inventory"  component={Inventory} />
+                <Route path='/home/displayProducts' exact component={DisplayProducts} />
+                <Route path='/home/help' exact component={Help} />
+                <Route path='/home/logout' exact component={Logout} />
                 <Route render= {() => { return(<h1> Select the Item above</h1>)}} />
       </div>
     )
