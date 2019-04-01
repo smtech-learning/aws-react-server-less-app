@@ -6,7 +6,7 @@ import Menu from './Menu';
   return (
       <div>
      
-      Inventory goes here
+      <h1> Inventory goes here</h1>
     </div>
   )
  }

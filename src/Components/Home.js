@@ -11,14 +11,15 @@ import { withRouter } from 'react-router-dom';
 export default class Home extends Component {
   render(props) {
       return (
-        
       <div>
               <Menu />
+              <Switch> 
                 <Route path="/home/inventory"  component={Inventory} />
                 <Route path='/home/displayProducts' exact component={DisplayProducts} />
                 <Route path='/home/help' exact component={Help} />
                 <Route path='/home/logout' exact component={Logout} />
-                <Route render= {() => { return(<h1> Select the Item above</h1>)}} />
+                  <Route render={() => { return (<h1> Select the Item above</h1>) }} />
+              </Switch>
       </div>
     )
   }
