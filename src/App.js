@@ -7,8 +7,14 @@ import Inventory from './Components/Inventory';
 import Help from './Components/Help';
 import Logout from './Components/Logout';
 import NotFound from './Components/NotFound';
-
+import Register from './Components/Register';
+import Amplify from 'aws-amplify';
+import awsmobile from './aws-exports';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
+
+
+Amplify.configure(awsmobile);
+
 
 
 class App extends Component {

@@ -92,6 +92,7 @@
     background: lightblue;
     border-radius: 5px;
     padding-bottom: 100px;
+    box-shadow: 0 0 10px;
 }
 
 .box2 {
