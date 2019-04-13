@@ -10,6 +10,7 @@ import NotFound from './Components/NotFound';
 import Register from './Components/Register';
 import Amplify from 'aws-amplify';
 import awsmobile from './aws-exports';
+
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 
@@ -23,7 +24,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch> 
               <Route path='/' exact component={Login} />
-                <Route path='/home'  component={Home} />
+          <Route path='/home' component={Home} />
+          <Route path='/register'  component={Register} />
           </Switch> 
       </BrowserRouter>
     );

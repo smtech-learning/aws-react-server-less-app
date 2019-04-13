@@ -30,7 +30,7 @@ class Login extends Component {
                     <input className="login-style" type="text" name ="login" id ="login" placeholder="Type login id"/> <br />  <br />  
                     <input className="login-style"      type="password" name="password" id="password"  placeholder="Type password"/>  <br />   <br />  
                       <NavLink className="btn btn-primary" to="/home" > Confirm Identity &amp; Go !</NavLink> -OR- &nbsp; 
-                        <NavLink className="btn btn-primary" to = "/home" > Sign-up !</NavLink>
+                        <NavLink className="btn btn-primary" to = "/register" > Sign-up !</NavLink>
                       
                 </div>         
             </div>

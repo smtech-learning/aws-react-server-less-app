@@ -31,6 +31,10 @@ html, body , .App, #root{
   color: white;
 }
 
+.image-size-medium:hover{
+  box-shadow:  0px 0px 5px;
+}
+
 .App-link {
   color: #61dafb;
 }

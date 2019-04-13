@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Auth } from 'aws-amplify';
+import registration from '../Images/registration.png';
 
 class REgister1 extends Component {
     constructor(props) {
@@ -73,23 +74,27 @@ class REgister1 extends Component {
     render() {
         if (!this.state.signedup) {
             return (
-                <div className="container">
-                    <form onSubmit={this.handlesubmit}>
+                <div className="register-container">
+                    <img src={registration} height="250px" />
+                    <form onSubmit={this.handlesubmit} class="form-container">
                         <input type="text" name="username" placeholder="username" onChange={this.handlechnage} />
                         <input type="password" name="password" placeholder="password" onChange={this.handlechnage} />
                         <input type="text" name="phone_number" placeholder="phone_number" onChange={this.handlechnage} />
                         <input type="text" name="email" placeholder="email" onChange={this.handlechnage} />
                         <button class="btn"> Submit  </button>
-                    
                     </form>
                 </div>
             )
         } else {
             return (
-                <div className="container">
-                    <form onSubmit={this.handlesubmit}>
-                    <input type="text" name="confirmation_code" placeholder="confirmationcode" onChange={this.handlechnage} />
-                    <button class="btn"> Submit  </button>
+                <div className="register-container">
+                <img src={registration} />
+                    
+                    <form onSubmit={this.handlesubmit} class="form-container">
+                    <input type="text" name="confirmation_code" placeholder="enter confirmation code" onChange={this.handlechnage} />
+                        <button class="btn"> Submit  </button>
+                        <button class="btn"> Hey ! Go to Login Page   </button>
+                        
                 </form>
                     
                 </div>
