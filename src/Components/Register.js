@@ -16,12 +16,10 @@ class REgister1 extends Component {
         }
         this.handlechnage = this.handlechnage.bind(this);
         this.handlesubmit = this.handlesubmit.bind(this);
-
     }
 
     handlesubmit(e) {
         e.preventDefault();
-        console.log('handle submit');
         const { username, password, email, phone_number ,signedup} = this.state;
         if (!signedup) {
             Auth.signUp({
@@ -41,16 +39,13 @@ class REgister1 extends Component {
                 })
                 .catch(err => console.log(err));
         } else {
-            // After retrieveing the confirmation code from the user
             const { username, confirmation_code } = this.state;
-
             Auth.confirmSignUp(username, confirmation_code, {
                 // Optional. Force user confirmation irrespective of existing alias. By default set to True.
                 forceAliasCreation: true
             }).then(data => {
                 console.log(data);
                 this.setState({ username: '', email: '', confirmation_code: '' });
-
             })
               .catch(err => console.log(err));
         }
@@ -88,15 +83,12 @@ class REgister1 extends Component {
         } else {
             return (
                 <div className="register-container">
-                <img src={registration} />
-                    
+                <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
                     <input type="text" name="confirmation_code" className="login-style" placeholder="enter confirmation code" onChange={this.handlechnage} />
                         <button class="btn"> Submit  </button>
-                        <button class="btn"> Hey ! Go to Login Page   </button>
-                        
+                        <button class="btn"> Hey ! Go to Login Page !   </button>
                 </form>
-                    
                 </div>
             )
         }
