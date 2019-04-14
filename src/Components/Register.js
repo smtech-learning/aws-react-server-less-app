@@ -72,10 +72,10 @@ class REgister1 extends Component {
                 <div className="register-container">
                     <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                        <input type="text" className="login-style" name="username" placeholder="username" onChange={this.handlechnage} />
-                        <input type="password" className="login-style" name="password" placeholder="password" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="phone_number" placeholder="phone_number" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="email" placeholder="email" onChange={this.handlechnage} />
+                        <input type="text" className="login-style" name="username" placeholder="Enter User Name" onChange={this.handlechnage} />
+                        <input type="password" className="login-style" name="password" placeholder="Enter Password" onChange={this.handlechnage} />
+                        <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (eg: +1-XXX-XXX-XXXX)" onChange={this.handlechnage} />
+                        <input type="text" className="login-style" name="email" placeholder="Enter e-mail address" onChange={this.handlechnage} />
                         <button class="btn"> Submit  </button>
                     </form>
                 </div>
@@ -85,7 +85,7 @@ class REgister1 extends Component {
                 <div className="register-container">
                 <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                    <input type="text" name="confirmation_code" className="login-style" placeholder="enter confirmation code" onChange={this.handlechnage} />
+                    <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Confirmation Code" onChange={this.handlechnage} />
                         <button class="btn"> Submit  </button>
                         <button class="btn"> Hey ! Go to Login Page !   </button>
                 </form>

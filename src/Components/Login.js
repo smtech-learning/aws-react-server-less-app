@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../Styles/Custom.css';
 import cloud from '../Images/cloud.png';
-import cloudpepper from '../Images/sitelogo.png';
 import serverlessarch from '../Images/server-less-arch.png';
 import { Route, NavLink, Switch } from 'react-router-dom';
 import { browserHistory } from 'history'
@@ -27,11 +26,10 @@ class Login extends Component {
 
             <div className="right-pannel">
                 <div className="center-login-section">  
-                    <input className="login-style" type="text" name ="login" id ="login" placeholder="Type login id"/> <br />  <br />  
-                    <input className="login-style"      type="password" name="password" id="password"  placeholder="Type password"/>  <br />   <br />  
+                    <input className="login-style" type="text" name ="login" id ="login" placeholder="Enter e-mail address"/> <br />  <br />  
+                    <input className="login-style"      type="password" name="password" id="password"  placeholder="Enter Password"/>  <br />   <br />  
                       <NavLink className="btn btn-primary" to="/home" > Confirm Identity &amp; Go !</NavLink> -OR- &nbsp; 
                         <NavLink className="btn btn-primary" to = "/register" > Sign-up !</NavLink>
-                      
                 </div>         
             </div>
       </div>
