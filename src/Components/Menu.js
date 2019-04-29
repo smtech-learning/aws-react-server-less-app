@@ -23,7 +23,7 @@ export default class Menu extends Component {
             <NavLink to="/home/inventory" activeStyle={{ color: 'white' }}> Inventory </NavLink> 
         </span> 
         <span id="span-menu-item2">
-            <NavLink to='/home/displayProducts' activeStyle = {{color:'white'}}> Products Available </NavLink> 
+            <NavLink to='/home/displayProducts' activeStyle = {{color:'white'}}> Add Products </NavLink> 
         </span> 
        
         <span id="span-menu-item3">
