@@ -19,16 +19,15 @@ export default class Menu extends Component {
   render() {
     return (
       <span className="App-header">
-        <span id="span-menu-item1">
-            <NavLink to="/home/inventory" activeStyle={{ color: 'white' }}> Inventory </NavLink> 
-        </span> 
+         
         <span id="span-menu-item2">
-            <NavLink to='/home/displayProducts' activeStyle = {{color:'white'}}> Add Products </NavLink> 
+            <NavLink to='/home/addProducts' activeStyle = {{color:'white'}}> Add Products </NavLink> 
         </span> 
        
-        <span id="span-menu-item3">
-            <NavLink to='/home/help' activeStyle={{ color: 'white' }}> Help</NavLink>
+        <span id="span-menu-item2">
+            <NavLink to='/home/searchProducts' activeStyle = {{color:'white'}}> Search Products </NavLink> 
         </span> 
+       
           
         <span id="span-menu-item4">
           <NavLink to='/' activeStyle={{ color: 'white' }}> Logout</NavLink> 
