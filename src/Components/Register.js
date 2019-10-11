@@ -72,7 +72,7 @@ class REgister1 extends Component {
                 <div className="register-container">
                     <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                        <input type="text" className="login-style" name="username" placeholder="Enter User Name" onChange={this.handlechnage} />
+                        <input type="text" className="login-style" name="username" placeholder="Enter User Name (8 minimum length)" onChange={this.handlechnage} />
                         <input type="password" className="login-style" name="password" placeholder="Enter Password" onChange={this.handlechnage} />
                         <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (eg: +1XXXXXXXXXX)" onChange={this.handlechnage} />
                         <input type="text" className="login-style" name="email" placeholder="Enter e-mail address" onChange={this.handlechnage} />
