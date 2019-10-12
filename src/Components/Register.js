@@ -113,7 +113,14 @@ class REgister1 extends Component {
             )
         } else if (this.state.signedup && this.state.confirmed) {
             return (
-                <h1> Congratulations !! </h1>
+                <div className="register-container">
+                    <img src={registration} height="250px" />
+                    <div className="form-container"> 
+                        <h3> Congratulations !! Registration successfully completed. </h3>
+                        <br />
+                        <button className="btn btn-primary"> Go to Login Page  </button>
+                    </div>
+                </div>
             )
         }
   }
