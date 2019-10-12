@@ -12,8 +12,11 @@ class REgister1 extends Component {
             email: '',
             phone_numbe:'',
             confirmation_code: '',
-            signedup:false
+            signedup: false
         }
+        this.state = { hasError: false };
+        this.state = { errorDescription: '' };
+        
         this.handlechnage = this.handlechnage.bind(this);
         this.handlesubmit = this.handlesubmit.bind(this);
     }
@@ -34,10 +37,17 @@ class REgister1 extends Component {
             })
                 .then(data => {
                     console.log(data);
+                    this.setState({ hasError: false });
+                    this.setState({ errorDescription: '' });
+
                     this.setState({ signedup: true });
                     this.setState({ password: '', email: '', phone_number: '' });
                 })
-                .catch(err => console.log(err));
+                .catch(err => {
+                    this.setState({ hasError: true });
+                    this.setState({ errorDescription: err.message });
+                }
+                );
         } else {
             const { username, confirmation_code } = this.state;
             Auth.confirmSignUp(username, confirmation_code, {
@@ -45,9 +55,15 @@ class REgister1 extends Component {
                 forceAliasCreation: true
             }).then(data => {
                 console.log(data);
+                this.setState({ hasError: false });
+                this.setState({ errorDescription: '' });
                 this.setState({ username: '', email: '', confirmation_code: '' });
             })
-              .catch(err => console.log(err));
+                .catch(err => {
+                    console.log(err);
+                    this.setState({ hasError: true });
+                    this.setState({ errorDescription: err.message });
+                });
         }
     }
 
@@ -72,11 +88,15 @@ class REgister1 extends Component {
                 <div className="register-container">
                     <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                        <input type="text" className="login-style" name="username" placeholder="Enter User Name (8 minimum length)" onChange={this.handlechnage} />
+                    {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
+                        
+                        <input type="text" className="login-style" name="username" placeholder="Enter e-mail address" onChange={this.handlechnage} />
+                        <input type="text" className="login-style" name="email" placeholder="Renter the e-mail address" onChange={this.handlechnage} />
+                        
                         <input type="password" className="login-style" name="password" placeholder="Enter Password" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (eg: +1XXXXXXXXXX)" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="email" placeholder="Enter e-mail address" onChange={this.handlechnage} />
-                        <button class="btn"> Submit  </button>
+                        <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (Format should be: +1XXXXXXXXXX)" onChange={this.handlechnage} />
+                        <br/>
+                        <button className="btn btn-primary"> Submit  </button>
                     </form>
                 </div>
             )
@@ -85,9 +105,13 @@ class REgister1 extends Component {
                 <div className="register-container">
                 <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                    <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Confirmation Code" onChange={this.handlechnage} />
-                        <button class="btn"> Submit  </button>
-                        <button class="btn"> Hey ! Go to Login Page !   </button>
+                        <h4> You should have received the verification code in the e-mail.
+                        Plese check the e-mail and enter the verification code below and click Submit !</h4>
+                    {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
+
+                    <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Verification Code" onChange={this.handlechnage} />
+                    <br/>
+                        <button className="btn btn-primary"> Submit  </button>
                 </form>
                 </div>
             )
