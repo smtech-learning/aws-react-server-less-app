@@ -12,7 +12,8 @@ class REgister1 extends Component {
             email: '',
             phone_numbe:'',
             confirmation_code: '',
-            signedup: false
+            signedup: false,
+            confirmed: false
         }
         this.state = { hasError: false };
         this.state = { errorDescription: '' };
@@ -23,8 +24,8 @@ class REgister1 extends Component {
 
     handlesubmit(e) {
         e.preventDefault();
-        const { username, password, email, phone_number ,signedup} = this.state;
-        if (!signedup) {
+        const { username, password, email, phone_number ,signedup,confirmed} = this.state;
+        if (!signedup && !confirmed) {
             Auth.signUp({
                 username,
                 password,
@@ -37,9 +38,6 @@ class REgister1 extends Component {
             })
                 .then(data => {
                     console.log(data);
-                    this.setState({ hasError: false });
-                    this.setState({ errorDescription: '' });
-
                     this.setState({ signedup: true });
                     this.setState({ password: '', email: '', phone_number: '' });
                 })
@@ -48,22 +46,20 @@ class REgister1 extends Component {
                     this.setState({ errorDescription: err.message });
                 }
                 );
-        } else {
+        } else if (signedup && !confirmed) {
             const { username, confirmation_code } = this.state;
             Auth.confirmSignUp(username, confirmation_code, {
-                // Optional. Force user confirmation irrespective of existing alias. By default set to True.
                 forceAliasCreation: true
             }).then(data => {
-                console.log(data);
-                this.setState({ hasError: false });
-                this.setState({ errorDescription: '' });
+                this.setState({ confirmed: true });
                 this.setState({ username: '', email: '', confirmation_code: '' });
             })
                 .catch(err => {
-                    console.log(err);
                     this.setState({ hasError: true });
                     this.setState({ errorDescription: err.message });
                 });
+        } else if (signedup && confirmed) {
+
         }
     }
 
@@ -88,32 +84,36 @@ class REgister1 extends Component {
                 <div className="register-container">
                     <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                    {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
+                        {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
                         
                         <input type="text" className="login-style" name="username" placeholder="Enter e-mail address" onChange={this.handlechnage} />
                         <input type="text" className="login-style" name="email" placeholder="Renter the e-mail address" onChange={this.handlechnage} />
                         
                         <input type="password" className="login-style" name="password" placeholder="Enter Password" onChange={this.handlechnage} />
                         <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (Format should be: +1XXXXXXXXXX)" onChange={this.handlechnage} />
-                        <br/>
+                        <br />
                         <button className="btn btn-primary"> Submit  </button>
                     </form>
                 </div>
             )
-        } else {
+        } else if (this.state.signedup && !this.state.confirmed) {
             return (
                 <div className="register-container">
-                <img src={registration} height="250px" />
+                    <img src={registration} height="250px" />
                     <form onSubmit={this.handlesubmit} class="form-container">
-                        <h4> You should have received the verification code in the e-mail.
-                        Plese check the e-mail and enter the verification code below and click Submit !</h4>
-                    {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
+                        <h5> You should have received the verification code in the e-mail.
+                        Plese check the e-mail and enter the verification code below and click Submit !</h5>
+                        {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
 
-                    <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Verification Code" onChange={this.handlechnage} />
-                    <br/>
+                        <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Verification Code" onChange={this.handlechnage} />
+                        <br />
                         <button className="btn btn-primary"> Submit  </button>
-                </form>
+                    </form>
                 </div>
+            )
+        } else if (this.state.signedup && this.state.confirmed) {
+            return (
+                <h1> Congratulations !! </h1>
             )
         }
   }
