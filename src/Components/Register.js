@@ -24,6 +24,7 @@ class REgister1 extends Component {
 
     handlesubmit(e) {
         e.preventDefault();
+        e.target.reset();
         const { username, password, email, phone_number ,signedup,confirmed} = this.state;
         if (!signedup && !confirmed) {
             Auth.signUp({
@@ -83,14 +84,16 @@ class REgister1 extends Component {
             return (
                 <div className="register-container">
                     <img src={registration} height="250px" />
-                    <form onSubmit={this.handlesubmit} class="form-container">
+                    <form onSubmit={this.handlesubmit} class="form-container" autocomplete="off">
+                        <input id="_suburb" type="text" style={{ display: 'none' }} disabled />
+                        
                         {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
                         
-                        <input type="text" className="login-style" name="username" placeholder="Enter e-mail address" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="email" placeholder="Renter the e-mail address" onChange={this.handlechnage} />
+                        <input type="text"  autocomplete="off_randomstring" className="login-style"  name="username" placeholder="Enter e-mail address" onChange={this.handlechnage} />
+                        <input type="text" autocomplete="off_randomstring" className="login-style"  name="email" placeholder="Renter the e-mail address" onChange={this.handlechnage} />
                         
-                        <input type="password" className="login-style" name="password" placeholder="Enter Password" onChange={this.handlechnage} />
-                        <input type="text" className="login-style" name="phone_number" placeholder="Enter Phone Number (Format should be: +1XXXXXXXXXX)" onChange={this.handlechnage} />
+                        <input type="password" autocomplete="new-password" className="login-style"   name="password" placeholder="Enter Password" onChange={this.handlechnage} />
+                        <input type="text" autocomplete="off_randomstring" className="login-style"   name="phone_number" placeholder="Enter Phone Number (Format should be: +1XXXXXXXXXX)" onChange={this.handlechnage} />
                         <br />
                         <button className="btn btn-primary"> Submit  </button>
                     </form>
@@ -120,7 +123,7 @@ class REgister1 extends Component {
                         <br />
                         <button className="btn btn-primary"> Go to Login Page  </button>
                     </div>
-                </div>
+                </div> 
             )
         }
   }
