@@ -3,13 +3,6 @@ import { Auth } from 'aws-amplify';
 import registration from '../Images/registration.png';
 
 
-const validateForm = (errors) => {
-  let valid = true;
-  Object.values(errors).forEach(
-    (val) => val.length > 0 && (valid = false)
-  );
-  return valid;
-}
 
 const countErrors = (errors) => {
   let count = 0;
@@ -18,6 +11,7 @@ const countErrors = (errors) => {
   );
   return count;
 }
+
 class REgister1 extends Component {
     constructor(props) {
         super(props);
@@ -25,21 +19,20 @@ class REgister1 extends Component {
             username: '',
             password: '',
             email: '',
-            phone_numbe:'',
+            phone_number:'',
             confirmation_code: '',
             signedup: false,
             confirmed: false,
             errors: {
-                fullName: '',
                 username: '',
                 email: '',
                 password: '',
                 phone_number:''
-            }
+            },
+            errorcount: '',
+            isFormvalid: false
         }
         this.handlesubmit = this.handlesubmit.bind(this);
-    
-
       }
     
     
@@ -72,21 +65,37 @@ class REgister1 extends Component {
           case 'password': 
             errors.password = 
               value.length < 8
-                ? 'Password must be 8 characters long!'
+                ? 'Password must be minimum 8 characters long!'
                 : '';
             break;
           default: console.log('testing here');
             break;
         }
     
-        this.setState({errors, [name]: value});
+        this.setState({ errors, [name]: value });
+        this.setState({ errorcount: countErrors(this.state.errors) })
+        this.setState({ isFormValid: this.isFormValid() });
+        
+    }
+       countErrors = (errors) => {
+        let count = 0;
+        Object.values(errors).forEach(
+          (val) => val.length > 0 && (count = count+1)
+        );
+        return count;
       }
     
-      handleSubmit1 = (event) => {
-        event.preventDefault();
-        this.setState({formValid: validateForm(this.state.errors)});
-        this.setState({errorCount: countErrors(this.state.errors)});
-      }
+    isFormValid = () => {
+            const { username, password, email, phone_number} = this.state;
+        if (username.length >0  && password.length > 0  && email.length>0 && phone_number.length>0 ) {
+            return true;
+        } else {
+            return false;
+            }
+       
+    }
+    
+ 
     
       handlesubmit(e) {
         e.preventDefault();
@@ -130,7 +139,7 @@ class REgister1 extends Component {
 
       render() {
         if (!this.state.signedup) {
-            const {errors} = this.state;
+            const {errors,errorcount,isFormValid} = this.state;
     
                 return (
                     <div className="register-container">
@@ -138,42 +147,32 @@ class REgister1 extends Component {
                         
                         <form onSubmit={this.handlesubmit} class="form-container" autoComplete="off">
                         <input id="_suburb" type="text" style={{ display: 'none' }} disabled />
-                        
                             {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
-                            
                             <input type="text" autocomplete="off_randomstring"
-                                className="login-style" name="username" placeholder="Enter e-mail address" 
+                                className="login-style" name="username" placeholder="Enter e-mail address (You would use this to login)" 
                                 onChange={this.handleChange} />
-                            
-                              
-                            
                                 {errors.username.length > 0 && 
-                                    <span className='error'>{errors.username}</span>}
-                            
+                                    <span className='errorStyle'>{errors.username}</span>}
                             <input type="text" autocomplete="off_randomstring"
-                                className="login-style" name="email" placeholder="Renter the e-mail address"
+                                className="login-style" name="email" placeholder="Re-enter the e-mail address"
                                 onChange={this.handleChange} />
-                            
                                 {errors.email.length > 0 && 
-                                    <span className='error'>{errors.email}</span>}
-                            
+                                    <span className='errorStyle'>{errors.email}</span>}
                             <input type="password" autocomplete="new-password"
-                                className="login-style" name="password" placeholder="Enter Password"
+                                className="login-style" name="password" placeholder="Enter Password (minimum 8 characters is needed)"
                                 onChange={this.handleChange} />
                             
                                 {errors.password.length > 0 && 
-                                    <span className='error'>{errors.password}</span>}
+                                    <span className='errorStyle'>{errors.password}</span>}
                             
                             <input type="text" autocomplete="off_randomstring"
                                 className="login-style" name="phone_number"
                                 placeholder="Enter Phone Number (Format should be: +1XXXXXXXXXX)"
                                 onChange={this.handleChange} />
-                            
                                 {errors.phone_number.length > 0 && 
-                                <span className='error'>{errors.phone_number}</span>}
-                            
+                                <span className='errorStyle'>{errors.phone_number}</span>}
                             <br/>
-                            <button className="btn btn-primary"> Submit  </button>
+                            <button className="btn btn-primary" disabled= { errorcount>0 || !isFormValid }> Submit  (all 4 fields are manadatory)</button>
                         </form>
                     </div>
                 )
@@ -185,7 +184,6 @@ class REgister1 extends Component {
                             <h5> You should have received the verification code in the e-mail.
                             Plese check the e-mail and enter the verification code below and click Submit !</h5>
                             {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
-    
                             <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Verification Code" onChange={this.handleChange} />
                             <br />
                             <button className="btn btn-primary"> Submit  </button>
@@ -206,5 +204,4 @@ class REgister1 extends Component {
             }
       }
 }
-
 export default REgister1;
