@@ -60,7 +60,7 @@ class REgister1 extends Component {
                 errors.phone_number = 
                   validEmailRegex.test(value)
                     ? ''
-                    : 'Phone Number is not valid!';
+                    : 'Phone Number is not valid! REMEMBER : (Format should be: +1XXXXXXXXXX) including +1. For example a valid one is : +18001231234' ;
                 break;
           case 'password': 
             errors.password = 
@@ -181,7 +181,7 @@ class REgister1 extends Component {
                     <div className="register-container">
                         <img src={registration} height="250px" />
                         <form onSubmit={this.handlesubmit} class="form-container">
-                            <h5> You should have received the verification code in the e-mail.
+                            <h5> Stay on this Page. You should have received the verification code in the e-mail.
                             Plese check the e-mail and enter the verification code below and click Submit !</h5>
                             {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
                             <input type="text" name="confirmation_code" className="login-style" placeholder="Enter Verification Code" onChange={this.handleChange} />
