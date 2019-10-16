@@ -15,6 +15,8 @@ import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 
 Amplify.configure(awsmobile);
 
+console.log('test 2');
+console.log('test 2');
 class App extends Component {
   render() {
     return (
