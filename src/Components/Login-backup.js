@@ -1,85 +1,82 @@
 import React, { Component } from 'react';
-import { Auth } from 'aws-amplify';
+import '../Styles/Custom.css';
+import cloud from '../Images/cloud.png';
+import serverlessarch from '../Images/server-less-arch.png';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import { browserHistory } from 'history'
+import { Auth } from "aws-amplify";
 
 class Login extends Component {
-    constructor(props) {
-        super(props);
-  
-        this.state = {
-            user: '',
-            password: '',
-            signedIn: false
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.signIn = this.signIn.bind(this);
-        this.confirmSignIn = this.confirmSignIn.bind(this);
-    }
-  
-    signIn() {
-        const { username, password } = this.state;  
-        Auth.signIn({
-            username: username,
-            password: password
-        })
-        .then(() => console.log('successfully signed in'))
-        .catch((err) => console.log(`Error signing in: ${ err }`))
-    }
-  
-    confirmSignIn() {
-        const { username } = this.state;
-        Auth.confirmSignIn(username)
-        .then(() => console.log('successfully confirmed signed in'))
-        .catch((err) => console.log(`Error confirming sign up - ${ err }`))
-    }
-  
-    handleSubmit(e) {
-        e.preventDefault();
 
-        this.signIn();
-        this.confirmSignIn()
-        this.setState({
-            username: '',
-            password: '',
-            signedIn: true
-        });
-        e.target.reset();
+    constructor(props) {
+      super(props); 
+      this.PageLogin = this.PageLogin.bind(this); 
+      this.handlechnage = this.handlechnage.bind(this);
+      this.state = {
+        password: '',
+        email: ''
+      }
+      this.state = { hasError: false };
+      this.state = {errorDescription: ''};
     }
   
-    handleChange(e) {
-        if (e.target.id === 'username') {
-          this.setState({
-              username: e.target.value
-          });
-        } else if (e.target.id === 'password') {
-          this.setState({
-              password: e.target.value
-          });
+    handlechnage(e) {
+      if (e.target.name === 'email') {
+        console.log(e.target.value);
+
+          this.setState({ email: e.target.value })
+      } else if (e.target.name === 'password') {
+        console.log(e.target.value);
+
+          this.setState({ password: e.target.value })
+          
         }
-    }
+  }
   
-    render() {
-      const { signedIn } = this.state;
-      if (signedIn) {
-          return (
-              <div>
-                  <h1>You have signed in!</h1>
-              </div>
-          );
-      } else {
-        return (
-          <div>
-            <form onSubmit={ this.handleSubmit }>
-                <label>Username</label>
-                <input id='username' type='text' onChange={ this.handleChange }/>
-                <label>Password</label>
-                <input id='password' type='password' onChange={ this.handleChange }/>
-                <button>Sign In</button>
-            </form>
-          </div>
-        );
+    async    PageLogin(e) {
+      e.preventDefault();
+      try {
+        await Auth.signIn(this.state.email, this.state.password);
+        this.props.history.push("/home");
+      } catch (e) {
+         this.setState({ hasError: true });
+        this.setState({ errorDescription: e.message });
       }
     }
+  
+  
+  
+  render() {
+    return (
+            <div className="my-own-container">
+                <div className="left-pannel" id ="over">
+                    <img src={cloud} className="image-size-min"/> <br /> 
+                    <img src={serverlessarch} className="image-size-medium"/>
+                </div>
+                <div className="right-pannel">
+                  <div className="center-login-section">  
+                  {this.state.hasError && <h5 className="errorStyle"> {this.state.errorDescription}</h5>}
+                  <form autoComplete="off">
+                    <input id="_suburb" type="text" style={{ display: 'none' }} disabled />
+                    
+                    <input onChange={this.handlechnage}
+                    autocomplete="off_randomstring" className="login-style" type="text"
+                    name="email" id="email" placeholder="Enter e-mail address" /> <br />  <br />  
+                    
+                    <input onChange={this.handlechnage}
+                    autocomplete="new-password" className="login-style" type="password"
+                    name="password" id="password" placeholder="Enter Password" />  <br />   <br />  
+                      
+                    <NavLink className="btn btn-primary"> <div onClick={this.PageLogin}> Confirm Identity &amp; Go ! </div></NavLink> -OR- &nbsp; 
+                      <NavLink className="btn btn-primary" to="/register" > Sign-up !</NavLink>
+                    </form>
+                    </div>         
+                </div>
+            </div>
+    )
+  }
 }
-
 export default Login;
+
+
+
