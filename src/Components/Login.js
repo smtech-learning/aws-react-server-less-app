@@ -21,12 +21,8 @@ class Login extends Component {
 
   handlechnage(e) {
     if (e.target.name === "email") {
-      console.log(e.target.value);
-
       this.setState({ email: e.target.value });
     } else if (e.target.name === "password") {
-      console.log(e.target.value);
-
       this.setState({ password: e.target.value });
     }
   }
