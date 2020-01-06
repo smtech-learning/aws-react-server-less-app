@@ -1,143 +1,183 @@
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .left-pannel {
-    width: 60%;
-    background-color: white;
-    height: 100%;
+  width: 60%;
+  background-color: white;
+  height: 100%;
 }
 
 .right-pannel {
-    width: 40%;
-    background: skyblue;
-    height: 100%;
-    position: relative;
+  width: 40%;
+  background: skyblue;
+  height: 100%;
+  position: relative;
 }
 
 .center-login-section {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    width: 100%;
-    margin: auto;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: 100%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
 }
 
 .my-own-container {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .login-style {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgb(13, 88, 202);
-    justify-content: center;
-    align-content: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(13, 88, 202);
+  justify-content: center;
+  align-content: center;
 }
 
 .register-container {
-    background: skyblue;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  background: skyblue;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    width: 450px;
-    height: 450px;
-    padding: 10px;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 450px;
+  padding: 10px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 #over img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .center-login-section {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .image-size-medium {
-    width: 500px;
-    height: 500px;
+  width: 500px;
+  height: 500px;
 }
 
 .image-size-min {
-    width: 250px;
-    height: 250px;
+  width: 250px;
+  height: 250px;
 }
 
 .App-header {
-    background-color: black;
-    min-height: 7vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    justify-content: space-evenly;
+  background-color: black;
+  min-height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  justify-content: space-evenly;
 }
 
 .inv-container {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 50%
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .inv-container div {
-    justify-content: space-between;
-    border: 1px solid #ccc;
+  justify-content: space-between;
+  border: 1px solid #ccc;
 }
 
 .box1 {
-    flex: 2;
-    order: 4;
-    background: lightblue;
-    border-radius: 5px;
-    padding-bottom: 100px;
-    box-shadow: 0 0 10px;
+  flex: 2;
+  order: 4;
+  background: lightblue;
+  border-radius: 5px;
+  padding-bottom: 100px;
+  box-shadow: 0 0 10px;
 }
 
 .box2 {
-    flex: 1;
-    order: 1;
-    background: lightblue;
-    border-radius: 5px;
-    padding-bottom: 100px;
+  flex: 1;
+  order: 1;
+  background: lightblue;
+  border-radius: 5px;
+  padding-bottom: 100px;
 }
 
 .box3 {
-    flex: 1;
-    order: 2;
-    background: lightblue;
-    border-radius: 5px;
-    padding-bottom: 10px;
+  flex: 1;
+  order: 2;
+  background: lightblue;
+  border-radius: 5px;
+  padding-bottom: 10px;
 }
 
 .box4 {
-    flex: 1;
-    order: 3;
-    background: lightcoral;
-    border-radius: 5px;
-    padding-bottom: 10px;
+  flex: 1;
+  order: 3;
+  background: lightcoral;
+  border-radius: 5px;
+  padding-bottom: 10px;
 }
 
-.errorStyle{
-    color:red;
-    
+.errorStyle {
+  color: red;
 }
 
-.container{
-    width:90%;
+.container {
+  width: 90%;
+}
+
+.login-container {
+  min-height: 100vh;
+  background-color: skyblue;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 0.15fr 1fr 0.15fr;
+
+  grid-template-areas: "header header header" "body body body" "footer footer footer";
+}
+
+.header-item {
+  grid-area: header;
+  background-color: white;
+}
+
+.body-item {
+  grid-area: body;
+  background-color: white;
+  /* background-image: url("https://images.pexels.com/photos/3171762/pexels-photo-3171762.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
+
+  background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer-item {
+  grid-area: footer;
+  background-color: #ccc;
+}
+
+.pre-login-body {
 }
