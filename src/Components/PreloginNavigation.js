@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { device } from "./device";
+import logo from "../Images/cloudthoughts-3.png";
 
 export default function PreloginNavigation() {
   const Nav = styled.nav`
     background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   `;
 
   const UnorderedList = styled.ul`
@@ -28,22 +32,31 @@ export default function PreloginNavigation() {
     color: #fff;
   `;
 
+  const Image = styled.img`
+    width: 200px;
+    height: 100px;
+  `;
+
   return (
-    <Nav>
-      <UnorderedList>
-        <LineItem>
-          <a href='#'> Login</a>
-        </LineItem>
-        <LineItem>
-          <a href='#'> Register</a>
-        </LineItem>
-        <LineItem>
-          <a href='#'> Products</a>
-        </LineItem>
-        <LineItem>
-          <a href='#'> Help</a>
-        </LineItem>
-      </UnorderedList>
-    </Nav>
+    <Fragment>
+      <Nav>
+        <Image src={logo} alt='logo' />
+
+        <UnorderedList>
+          <LineItem>
+            <a href='#'> Login</a>
+          </LineItem>
+          <LineItem>
+            <a href='#'> Register</a>
+          </LineItem>
+          <LineItem>
+            <a href='#'> Products</a>
+          </LineItem>
+          <LineItem>
+            <a href='#'> Help</a>
+          </LineItem>
+        </UnorderedList>
+      </Nav>
+    </Fragment>
   );
 }
