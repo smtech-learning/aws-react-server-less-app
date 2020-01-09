@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "./device";
 
 export default function PreloginNavigation() {
   const Nav = styled.nav`
@@ -8,9 +9,13 @@ export default function PreloginNavigation() {
 
   const UnorderedList = styled.ul`
     list-style: none;
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
+
+    @media ${device.tablet} {
+      display: flex;
+    }
+    display: none;
   `;
 
   const LineItem = styled.li`

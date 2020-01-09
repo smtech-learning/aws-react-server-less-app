@@ -153,7 +153,6 @@
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-template-rows: 0.15fr 1fr 0.15fr;
-
   grid-template-areas: "header header header" "body body body" "footer footer footer";
 }
 
@@ -165,8 +164,6 @@
 .body-item {
   grid-area: body;
   background-color: white;
-  /* background-image: url("https://images.pexels.com/photos/3171762/pexels-photo-3171762.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
-
   background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-attachment: fixed;
