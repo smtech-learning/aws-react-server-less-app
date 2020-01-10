@@ -8,16 +8,19 @@ export default function PreloginNavigation() {
     background: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    @media ${device.tablet} {
+      justify-content: space-between;
+    }
+    justify-content: flex-end;
   `;
 
   const UnorderedList = styled.ul`
     list-style: none;
-    flex-direction: row;
-    justify-content: flex-end;
 
     @media ${device.tablet} {
       display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
     }
     display: none;
   `;
