@@ -4,6 +4,7 @@ import PreLoginBody from "./PreLoginBody";
 import { Switch, Route } from "react-router-dom";
 import Login from "../Components/Login";
 import NoMatch from "../Components/NoMatch";
+import SidebarMenu from "../Components/SidebarMenu";
 
 export default function LoginNextGen() {
   return (
@@ -11,6 +12,7 @@ export default function LoginNextGen() {
       <div className='header-item'>
         <PreloginNavigation />
       </div>
+      <SidebarMenu />
       <Switch>
         <Route path='/' exact>
           <div className='body-item'>

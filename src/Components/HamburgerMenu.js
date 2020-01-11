@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { device } from "./device";
+import { Context } from "./ContextOneProvider";
 
 export default function HamburgerMenu() {
+  const { show, toggleShow } = useContext(Context);
+
   const ToggleButton = styled.div`
     position: absolute;
     top: 30px;
@@ -22,12 +25,8 @@ export default function HamburgerMenu() {
     margin-top: 4px;
   `;
 
-  const show = () => {
-    document.getElementById("sidebar").classList.toggle("active");
-  };
-
   return (
-    <ToggleButton onclick={show}>
+    <ToggleButton onClick={toggleShow}>
       <ToggleButtonSpan> </ToggleButtonSpan>
       <ToggleButtonSpan> </ToggleButtonSpan>
       <ToggleButtonSpan> </ToggleButtonSpan>
