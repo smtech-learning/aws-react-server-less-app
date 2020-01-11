@@ -25,8 +25,12 @@ export default function HamburgerMenu() {
     margin-top: 4px;
   `;
 
+  const toggleShow1 = () => {
+    document.getElementById("sidebar").classList.toggle("active");
+  };
+
   return (
-    <ToggleButton onClick={toggleShow}>
+    <ToggleButton onClick={toggleShow1}>
       <ToggleButtonSpan> </ToggleButtonSpan>
       <ToggleButtonSpan> </ToggleButtonSpan>
       <ToggleButtonSpan> </ToggleButtonSpan>
