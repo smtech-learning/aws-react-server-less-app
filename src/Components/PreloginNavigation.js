@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { device } from "./device";
 import logo from "../Images/cloudthoughts-3.png";
+import { Route, Switch, Link } from "react-router-dom";
+import HamburgerMenu from "../Components/HamburgerMenu";
 
 export default function PreloginNavigation() {
   const Nav = styled.nav`
@@ -43,20 +45,23 @@ export default function PreloginNavigation() {
   return (
     <Fragment>
       <Nav>
-        <Image src={logo} alt='logo' />
+        <Link to='/'>
+          <Image src={logo} alt='logo' />
+        </Link>
+        <HamburgerMenu />
 
         <UnorderedList>
           <LineItem>
-            <a href='#'> Login</a>
+            <Link to='/login'> Login</Link>
           </LineItem>
           <LineItem>
-            <a href='#'> Register</a>
+            <Link to='/register'> Register</Link>
           </LineItem>
           <LineItem>
-            <a href='#'> Products</a>
+            <Link to='/products'> Products</Link>
           </LineItem>
           <LineItem>
-            <a href='#'> Help</a>
+            <Link to='/help'> Help</Link>
           </LineItem>
         </UnorderedList>
       </Nav>

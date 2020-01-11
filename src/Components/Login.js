@@ -78,15 +78,10 @@ class Login extends Component {
               />{" "}
               <br /> <br />
               <NavLink className='btn btn-primary'>
-                {" "}
-                <div onClick={this.PageLogin}>
-                  {" "}
-                  Confirm Identity &amp; Go !{" "}
-                </div>
-              </NavLink>{" "}
+                <div onClick={this.PageLogin}>Confirm Identity &amp; Go ! </div>
+              </NavLink>
               -OR- &nbsp;
               <NavLink className='btn btn-primary' to='/register'>
-                {" "}
                 Sign-up !
               </NavLink>
             </form>
