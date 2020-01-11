@@ -4,21 +4,19 @@ import { device } from "./device";
 import { Context } from "./ContextOneProvider";
 
 export default function SidebarMenu() {
-  const [visible, setVisible] = useState(false);
   const { show, toggleShow } = useContext(Context);
 
   const SidebarDiv = styled.div`
     position: absolute;
     width: 300px;
-    height: 100%;
-    background: #000;
+    height: 75.5%;
+    background: #333;
     left: ${props => (show ? "0px" : "-300px")};
-
-    transition: 0.4s;
-    top: 0;
+    top: 100px;
     display: flex;
     display-direction: row;
     justify-content: space-between;
+    transition: 5s;
   `;
 
   const SidebarLineItem = styled.li`
@@ -27,10 +25,6 @@ export default function SidebarMenu() {
     font-size: 20px;
     padding: 20px 24px;
   `;
-
-  function handleShow() {
-    setVisible(false);
-  }
 
   return (
     <SidebarDiv id='sidebar'>
