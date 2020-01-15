@@ -164,12 +164,14 @@
 .body-item {
   grid-area: body;
   background-color: white;
-  background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  /* background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  background-image: url("../Images/cloud-computing.jpg");
+
   /* background-image: url("../Images/Serverless.png"); */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   display: flex;
   flex-direction: column;
   justify-content: center;
