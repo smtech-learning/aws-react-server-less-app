@@ -20,7 +20,7 @@ export default function LoginNextGen() {
           </div>
         </Route>
         <Route path='/login'>
-          <div className='login-background '>
+          <div className='login-background'>
             <Login />
           </div>
         </Route>

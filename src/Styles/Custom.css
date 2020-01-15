@@ -186,18 +186,16 @@
 .pre-login-body {
 }
 
+.login-container1 {
+  display: flex;
+  flex-direction: row;
+}
+
 .login-background {
   grid-area: body;
-  background-color: white;
   background-image: url("../Images/login.jpg");
-
-  /* background-image: url("../Images/Serverless.png"); */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-position: top left;
 }

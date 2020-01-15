@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "../Styles/Custom.css";
 import cloud from "../Images/cloud.png";
 import serverlessarch from "../Images/server-less-arch.png";
@@ -41,7 +41,8 @@ class Login extends Component {
   render() {
     return (
       <div className='login-background'>
-        <h1> From login page</h1>;
+        <h1> Login here</h1>
+        <h1> Login here</h1>
       </div>
     );
   }
