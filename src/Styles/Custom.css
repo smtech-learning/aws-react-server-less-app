@@ -166,7 +166,6 @@
   background-color: white;
   background-image: url("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   /* background-image: url("../Images/Serverless.png"); */
-
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -183,4 +182,20 @@
 }
 
 .pre-login-body {
+}
+
+.login-background {
+  grid-area: body;
+  background-color: white;
+  background-image: url("../Images/login.jpg");
+
+  /* background-image: url("../Images/Serverless.png"); */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

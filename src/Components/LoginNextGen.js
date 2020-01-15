@@ -20,7 +20,9 @@ export default function LoginNextGen() {
           </div>
         </Route>
         <Route path='/login'>
-          <NoMatch />
+          <div className='login-background '>
+            <Login />
+          </div>
         </Route>
         <Route path='*'>
           <NoMatch />

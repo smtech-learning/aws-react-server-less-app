@@ -40,53 +40,8 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='my-own-container'>
-        <div className='left-pannel' id='over'>
-          <img src={cloud} className='image-size-min' /> <br />
-          <img src={serverlessarch} className='image-size-medium' />
-        </div>
-        <div className='right-pannel'>
-          <div className='center-login-section'>
-            {this.state.hasError && (
-              <h5 className='errorStyle'> {this.state.errorDescription}</h5>
-            )}
-            <form autoComplete='off'>
-              <input
-                id='_suburb'
-                type='text'
-                style={{ display: "none" }}
-                disabled
-              />
-              <input
-                onChange={this.handlechnage}
-                autocomplete='off_randomstring'
-                className='login-style'
-                type='text'
-                name='email'
-                id='email'
-                placeholder='Enter e-mail address'
-              />{" "}
-              <br /> <br />
-              <input
-                onChange={this.handlechnage}
-                autocomplete='new-password'
-                className='login-style'
-                type='password'
-                name='password'
-                id='password'
-                placeholder='Enter Password'
-              />{" "}
-              <br /> <br />
-              <NavLink className='btn btn-primary'>
-                <div onClick={this.PageLogin}>Confirm Identity &amp; Go ! </div>
-              </NavLink>
-              -OR- &nbsp;
-              <NavLink className='btn btn-primary' to='/register'>
-                Sign-up !
-              </NavLink>
-            </form>
-          </div>
-        </div>
+      <div className='login-background'>
+        <h1> From login page</h1>;
       </div>
     );
   }

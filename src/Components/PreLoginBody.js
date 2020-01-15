@@ -14,7 +14,7 @@ export default function PreLoginBody() {
 
   return (
     <Fragment>
-      <CenterCredentialsBox> Login here</CenterCredentialsBox>
+      <CenterCredentialsBox> </CenterCredentialsBox>
     </Fragment>
   );
 }
