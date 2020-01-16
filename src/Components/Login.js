@@ -40,9 +40,13 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='login-background'>
-        <h1> Login here</h1>
-        <h1> Login here</h1>
+      <div className='login-input-section'>
+        <div className='login-wrapper'>
+          <h3>Login/Signup</h3>
+          <input placeholder='login information' type='text' />
+          <br />
+          <input placeholder='Password' type='text' />
+        </div>
       </div>
     );
   }
