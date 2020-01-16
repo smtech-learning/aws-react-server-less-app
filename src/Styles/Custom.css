@@ -194,7 +194,9 @@
 
 .login-background {
   grid-area: body;
-  background-image: url("../Images/login.jpg");
+  /* background-image: url("../Images/login.jpg"); */
+  background-image: url("../Images/login-with-key.jpg");
+
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
