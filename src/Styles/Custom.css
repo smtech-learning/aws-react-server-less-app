@@ -218,3 +218,20 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.footer-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.social-icon {
+  margin: 0 15%;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import PreloginNavigation from "./PreloginNavigation";
 import PreLoginBody from "./PreLoginBody";
+import Footer from "./Footer";
 import { Switch, Route } from "react-router-dom";
 import Login from "../Components/Login";
 import NoMatch from "../Components/NoMatch";
@@ -29,7 +30,9 @@ export default function LoginNextGen() {
         </Route>
       </Switch>
 
-      <div className='footer-item'> Footer</div>
+      <div className='footer-item'>
+        <Footer />
+      </div>
     </div>
   );
 }
