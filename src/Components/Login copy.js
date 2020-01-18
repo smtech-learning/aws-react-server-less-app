@@ -65,7 +65,7 @@ class Login extends Component {
                 name='email'
                 id='email'
                 placeholder='Enter e-mail address'
-              />{" "}
+              />
               <br /> <br />
               <input
                 onChange={this.handlechnage}
@@ -75,7 +75,7 @@ class Login extends Component {
                 name='password'
                 id='password'
                 placeholder='Enter Password'
-              />{" "}
+              />
               <br /> <br />
               <NavLink className='btn btn-primary'>
                 <div onClick={this.PageLogin}>Confirm Identity &amp; Go ! </div>

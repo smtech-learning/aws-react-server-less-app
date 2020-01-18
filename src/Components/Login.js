@@ -5,6 +5,8 @@ import serverlessarch from "../Images/server-less-arch.png";
 import { Route, NavLink, Switch } from "react-router-dom";
 import { browserHistory } from "history";
 import { Auth } from "aws-amplify";
+import styled from "styled-components";
+import { device } from "./device";
 
 class Login extends Component {
   constructor(props) {
@@ -39,15 +41,68 @@ class Login extends Component {
   }
 
   render() {
+    const LoginInputSection = styled.div`
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    `;
+
+    const LoginWrapper = styled.div`
+      margin-right: 10%;
+      margin-left: 10%;
+
+      background: #fff;
+      padding: 50px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px gray;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    `;
     return (
-      <div className='login-input-section'>
-        <div className='login-wrapper'>
-          <h3>Login/Signup</h3>
-          <input placeholder='login information' type='text' />
-          <br />
-          <input placeholder='Password' type='text' />
-        </div>
-      </div>
+      <LoginInputSection>
+        <LoginWrapper>
+          {this.state.hasError && (
+            <h5 className='errorStyle'> {this.state.errorDescription}</h5>
+          )}
+          <form autoComplete='off'>
+            <input
+              id='_suburb'
+              type='text'
+              style={{ display: "none" }}
+              disabled
+            />
+            <input
+              onChange={this.handlechnage}
+              autocomplete='off_randomstring'
+              className='login-style'
+              type='text'
+              name='email'
+              id='email'
+              placeholder='Enter e-mail address'
+            />
+            <br /> <br />
+            <input
+              onChange={this.handlechnage}
+              autocomplete='new-password'
+              className='login-style'
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Enter Password'
+            />
+            <br /> <br />
+            <NavLink className='btn btn-primary'>
+              <div onClick={this.PageLogin}>Confirm Identity &amp; Go ! </div>
+            </NavLink>
+            -OR- &nbsp;
+            <NavLink className='btn btn-primary' to='/register'>
+              Sign-up !
+            </NavLink>
+          </form>
+        </LoginWrapper>
+      </LoginInputSection>
     );
   }
 }

@@ -182,42 +182,11 @@
   background-color: #ccc;
 }
 
-.pre-login-body {
-}
 
-.login-input-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
-.login-background {
-  grid-area: body;
-  /* background-image: url("../Images/login.jpg"); */
-  background-image: url("../Images/login-with-key.jpg");
 
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: top left;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  /* align-items: center; */
-}
 
-.login-wrapper {
-  margin: 0 20px;
-  background: #fff;
-  background: linear-gradient(#e66465, #9198e5);
-  padding: 100px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px gray;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
 
 .footer-item {
   display: flex;
