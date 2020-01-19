@@ -27,7 +27,10 @@ export default function LoginNextGen() {
     background-position: top left;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    @media ${device.tablet} {
+      justify-content: flex-end;
+    }
+    justify-content: flex-start;
     /* align-items: center; */
   `;
 

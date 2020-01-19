@@ -51,7 +51,6 @@ class Login extends Component {
     const LoginWrapper = styled.div`
       margin-right: 10%;
       margin-left: 10%;
-
       background: #fff;
       padding: 50px;
       border-radius: 5px;
