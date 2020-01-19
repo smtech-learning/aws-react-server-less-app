@@ -9,7 +9,9 @@ export default function SidebarMenu() {
   const { show, toggleShow } = useContext(Context);
 
   const SidebarDiv = styled.div`
+  
     position: absolute;
+    z-index:2
     width: 300px;
     height: 75.5%;
     // background: #3e88a3  -> This is the color of the background image itself so not using this color but keeping here for reference.
@@ -21,6 +23,7 @@ export default function SidebarMenu() {
     //re-render and when the component re-renders the transition property is not working.
     left:-300px;
     &.active{
+     
         left:0px;
     }
     top: 100px;

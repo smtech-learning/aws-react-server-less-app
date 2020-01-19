@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import { device } from "./device";
+import Slider from "../Components/Slider";
 
 export default function PreLoginBody() {
   const CenterCredentialsBox = styled.div`
@@ -8,13 +9,11 @@ export default function PreLoginBody() {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
-    background: pink;
   `;
 
   return (
     <Fragment>
-      <CenterCredentialsBox> </CenterCredentialsBox>
+      <CenterCredentialsBox></CenterCredentialsBox>
     </Fragment>
   );
 }
