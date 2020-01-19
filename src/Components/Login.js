@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "../Styles/Custom.css";
-import cloud from "../Images/cloud.png";
 import serverlessarch from "../Images/server-less-arch.png";
 import { Route, NavLink, Switch } from "react-router-dom";
 import { browserHistory } from "history";
@@ -49,8 +48,13 @@ class Login extends Component {
     `;
 
     const LoginWrapper = styled.div`
-      margin-right: 10%;
-      margin-left: 10%;
+      // @media ${device.tablet} {
+      //   margin-left: 10%;
+      //   margin-right: 50%;
+      // }
+      // margin-left: 50%;
+      // margin-right: 10%;
+      margin:20px;
       background: #fff;
       padding: 50px;
       border-radius: 5px;
@@ -59,6 +63,23 @@ class Login extends Component {
       background-position: center;
       background-repeat: no-repeat;
     `;
+
+    const ButtonsSection = styled.div`
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 20px;
+    `;
+
+    const Input = styled.input`
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgb(13, 88, 202);
+      justify-content: center;
+      align-content: center;
+      font-size: 2rem;
+    `;
+
     return (
       <LoginInputSection>
         <LoginWrapper>
@@ -72,33 +93,32 @@ class Login extends Component {
               style={{ display: "none" }}
               disabled
             />
-            <input
+            <Input
               onChange={this.handlechnage}
               autocomplete='off_randomstring'
-              className='login-style'
               type='text'
               name='email'
               id='email'
               placeholder='Enter e-mail address'
             />
             <br /> <br />
-            <input
+            <Input
               onChange={this.handlechnage}
               autocomplete='new-password'
-              className='login-style'
               type='password'
               name='password'
               id='password'
               placeholder='Enter Password'
             />
-            <br /> <br />
-            <NavLink className='btn btn-primary'>
-              <div onClick={this.PageLogin}>Confirm Identity &amp; Go ! </div>
-            </NavLink>
-            -OR- &nbsp;
-            <NavLink className='btn btn-primary' to='/register'>
-              Sign-up !
-            </NavLink>
+            <ButtonsSection>
+              <NavLink className='btn btn-primary'>
+                <div onClick={this.PageLogin}>Let's Go ! </div>
+              </NavLink>
+
+              <NavLink className='btn btn-primary' to='/register'>
+                Sign-up
+              </NavLink>
+            </ButtonsSection>
           </form>
         </LoginWrapper>
       </LoginInputSection>

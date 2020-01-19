@@ -34,14 +34,6 @@
   flex-direction: row;
 }
 
-.login-style {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgb(13, 88, 202);
-  justify-content: center;
-  align-content: center;
-}
-
 .register-container {
   background: skyblue;
   display: flex;

@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import styled, { css } from "styled-components";
 import { device } from "./device";
 import { Context } from "./ContextOneProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 export default function SidebarMenu() {
   const { show, toggleShow } = useContext(Context);
@@ -47,16 +49,19 @@ export default function SidebarMenu() {
   return (
     <SpecialSidebarDiv id='sidebar' className={show ? "active" : ""}>
       <ul>
-        <SidebarLineItem> Home</SidebarLineItem>
-        <SidebarLineItem> Work</SidebarLineItem>
-        <SidebarLineItem> About</SidebarLineItem>
-        <SidebarLineItem> Contact</SidebarLineItem>
+        <SidebarLineItem>
+          <FontAwesomeIcon className='social-icon' icon={faCoffee} size='2x' />
+          Login
+        </SidebarLineItem>
+        <SidebarLineItem> Register</SidebarLineItem>
+        <SidebarLineItem> Products</SidebarLineItem>
+        <SidebarLineItem> Help</SidebarLineItem>
       </ul>
 
       <ul>
         <SidebarLineItem>
           <span id='close' onClick={toggleShow1}>
-            Xx
+            X
           </span>
         </SidebarLineItem>
       </ul>
