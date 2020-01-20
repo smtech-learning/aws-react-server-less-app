@@ -179,7 +179,7 @@
 
 .footer-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -191,5 +191,5 @@
 }
 
 .social-icon {
-  margin: 0 15%;
+  margin: 10% 15%;
 }

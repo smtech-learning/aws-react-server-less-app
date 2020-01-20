@@ -59,6 +59,7 @@ export default function LoginNextGen() {
       </Switch>
 
       <div className='footer-item'>
+        <div> @sureshmunnangi</div>
         <Footer />
       </div>
     </div>
