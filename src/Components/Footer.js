@@ -10,11 +10,31 @@ import {
 export default function Footer() {
   return (
     <div className='social-icons-container'>
-      <FontAwesomeIcon className='social-icon' icon={faLinkedinIn} size='2x' />
-      <FontAwesomeIcon className='social-icon' icon={faYoutube} size='2x' />
-      <FontAwesomeIcon className='social-icon' icon={faMedium} size='2x' />
-      <FontAwesomeIcon className='social-icon' icon={faTwitter} size='2x' />
-      <FontAwesomeIcon className='social-icon' icon={faGithub} size='2x' />
+      <FontAwesomeIcon
+        className='social-icon-footer'
+        icon={faLinkedinIn}
+        size='2x'
+      />
+      <FontAwesomeIcon
+        className='social-icon-footer'
+        icon={faYoutube}
+        size='2x'
+      />
+      <FontAwesomeIcon
+        className='social-icon-footer'
+        icon={faMedium}
+        size='2x'
+      />
+      <FontAwesomeIcon
+        className='social-icon-footer'
+        icon={faTwitter}
+        size='2x'
+      />
+      <FontAwesomeIcon
+        className='social-icon-footer'
+        icon={faGithub}
+        size='2x'
+      />
     </div>
   );
 }

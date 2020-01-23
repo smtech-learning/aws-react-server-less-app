@@ -25,6 +25,8 @@ export default function SidebarMenu() {
     &.active{
      
         left:0px;
+        box-shadow: 0 2px 50px 0 #0076ff;
+
     }
     top: 100px;
     display: flex;

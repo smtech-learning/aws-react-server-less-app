@@ -2,8 +2,8 @@ import React from "react";
 // import "../Styles/main.css";
 import "../Styles/slider-def.css";
 import Image0 from "../Images/cloud-computing.jpg";
-import Image1 from "../Images/1.jpg";
-import Image2 from "../Images/2.jpg";
+import Image1 from "../Images/2.jpg";
+import Image2 from "../Images/winter-tree.jpg";
 import Image3 from "../Images/3.jpg";
 import Image4 from "../Images/4.jpg";
 
