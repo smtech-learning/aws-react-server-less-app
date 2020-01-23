@@ -193,3 +193,37 @@
 .social-icon-footer {
   margin: 10% 15%;
 }
+
+.loginWrapper {
+  margin: 20px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loginInputSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+}
+
+.input-style {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(13, 88, 202);
+  justify-content: center;
+  align-content: center;
+  font-size: 2rem;
+}

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "../Styles/Custom.css";
 import serverlessarch from "../Images/server-less-arch.png";
-import { Route, NavLink, Switch } from "react-router-dom";
+import { Route, NavLink, withRouter, Switch } from "react-router-dom";
 import { browserHistory } from "history";
 import { Auth } from "aws-amplify";
 import styled from "styled-components";
 import { device } from "./device";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 class Login extends Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class Login extends Component {
 
   handlechnage(e) {
     if (e.target.name === "email") {
+      console.log(e.target.value);
       this.setState({ email: e.target.value });
     } else if (e.target.name === "password") {
       this.setState({ password: e.target.value });
@@ -48,13 +51,7 @@ class Login extends Component {
     `;
 
     const LoginWrapper = styled.div`
-      // @media ${device.tablet} {
-      //   margin-left: 10%;
-      //   margin-right: 50%;
-      // }
-      // margin-left: 50%;
-      // margin-right: 10%;
-      margin:20px;
+      margin: 20px;
       background: #fff;
       padding: 50px;
       border-radius: 5px;
@@ -81,30 +78,26 @@ class Login extends Component {
     `;
 
     return (
-      <LoginInputSection>
-        <LoginWrapper>
+      <div className='loginInputSection'>
+        <div className='loginWrapper'>
           {this.state.hasError && (
             <h5 className='errorStyle'> {this.state.errorDescription}</h5>
           )}
           <form autoComplete='off'>
+            {/*<TextField id='standard-basic' label='enter e-mail id' /> */}
             <input
-              id='_suburb'
-              type='text'
-              style={{ display: "none" }}
-              disabled
-            />
-            <Input
+              className='input-style'
               onChange={this.handlechnage}
-              autocomplete='off_randomstring'
               type='text'
               name='email'
               id='email'
               placeholder='Enter e-mail address'
             />
             <br /> <br />
-            <Input
-              onChange={this.handlechnage}
+            <input
+              className='input-style'
               autocomplete='new-password'
+              onChange={this.handlechnage}
               type='password'
               name='password'
               id='password'
@@ -112,7 +105,7 @@ class Login extends Component {
             />
             <ButtonsSection>
               <NavLink className='btn btn-primary'>
-                <div onClick={this.PageLogin}>Let's Go ! </div>
+                <div onClick={this.PageLogin}>Let's Go </div>
               </NavLink>
 
               <NavLink className='btn btn-primary' to='/register'>
@@ -120,8 +113,8 @@ class Login extends Component {
               </NavLink>
             </ButtonsSection>
           </form>
-        </LoginWrapper>
-      </LoginInputSection>
+        </div>
+      </div>
     );
   }
 }

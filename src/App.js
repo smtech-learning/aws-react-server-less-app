@@ -6,7 +6,13 @@ import Home from "./Components/Home";
 import Register from "./Components/Register";
 import Amplify from "aws-amplify";
 import awsmobile from "./aws-exports";
-import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  NavLink,
+  withRouter,
+  Switch
+} from "react-router-dom";
 import awsconfig from "./aws-exports";
 import { withAuthenticator } from "aws-amplify-react";
 
