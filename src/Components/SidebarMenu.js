@@ -7,7 +7,8 @@ import { FaSignInAlt } from "react-icons/fa";
 import { FaKeyboard } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
-import { FaProductHunt } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 
 export default function SidebarMenu() {
   const { show, toggleShow } = useContext(Context);
@@ -68,8 +69,14 @@ export default function SidebarMenu() {
         </SidebarLineItem>
         <SidebarLineItem>
           <span className='sidebar-menu-pointer'>
-            <FaProductHunt className='social-icon-sidebar-menu fa-2x' />
-            <span className='sidebar-menu-pointer'> Products</span>
+            <FaPencilAlt className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Architecture</span>
+          </span>
+        </SidebarLineItem>
+        <SidebarLineItem>
+          <span className='sidebar-menu-pointer'>
+            <FaAws className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Services</span>
           </span>
         </SidebarLineItem>
         <SidebarLineItem>

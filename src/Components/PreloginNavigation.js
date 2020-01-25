@@ -5,6 +5,12 @@ import logo from "../Images/cloudthoughts-3.png";
 import { Route, Switch, Link } from "react-router-dom";
 import HamburgerMenu from "../Components/HamburgerMenu";
 import { useParams, useHistory } from "react-router-dom";
+import { FaSignInAlt } from "react-icons/fa";
+import { FaKeyboard } from "react-icons/fa";
+import { FaQuestionCircle } from "react-icons/fa";
+import { FaTimesCircle } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 
 export default function PreloginNavigation() {
   const history = useHistory();
@@ -56,16 +62,31 @@ export default function PreloginNavigation() {
 
         <UnorderedList>
           <LineItem>
-            <Link to='/login'> Login</Link>
+            <Link to='/login' className='main-menu-center-both'>
+              {" "}
+              <FaSignInAlt className='social-icon-menu fa-1x' /> Login
+            </Link>
           </LineItem>
           <LineItem>
-            <Link to='/register'> Register</Link>
+            <Link to='/register' className='main-menu-center-both'>
+              {" "}
+              <FaKeyboard className='social-icon-menu fa-1x' /> Register
+            </Link>
           </LineItem>
           <LineItem>
-            <Link to='/products'> Products</Link>
+            <Link to='/architecture' className='main-menu-center-both'>
+              <FaPencilAlt className='social-icon-menu fa-1x' /> Architecture
+            </Link>
           </LineItem>
           <LineItem>
-            <Link to='/help'> Help</Link>
+            <Link to='/services' className='main-menu-center-both'>
+              <FaAws className='social-icon-menu fa-1x' /> Services
+            </Link>
+          </LineItem>
+          <LineItem>
+            <Link to='/help' className='main-menu-center-both'>
+              <FaQuestionCircle className='social-icon-menu fa-1x' /> Help
+            </Link>
           </LineItem>
         </UnorderedList>
       </Nav>

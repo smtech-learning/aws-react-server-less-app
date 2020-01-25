@@ -200,8 +200,21 @@
   cursor: pointer;
 }
 
-.sidebar-menu-pointer{
+.social-icon-menu {
+  padding-right: 0.2rem;
+  size: 6x;
   cursor: pointer;
+}
+
+.sidebar-menu-pointer {
+  cursor: pointer;
+}
+
+.main-menu-center-both {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .loginWrapper {
