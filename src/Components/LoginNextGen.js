@@ -13,6 +13,7 @@ import LoginMedium from "../Images/key-medium-image.jpg";
 import LoginSmall from "../Images/key-small-image.jpg";
 import LoginWithKeyboard from "../Images/login-with-key.jpg";
 import Slider from "../Components/Slider";
+import Home from "./Home";
 
 export default function LoginNextGen() {
   const LoginBackground = styled.div`
@@ -53,8 +54,8 @@ export default function LoginNextGen() {
             <Login />
           </LoginBackground>
         </Route>
-        <Route path='*'>
-          <Slider />
+        <Route path='/home'>
+          <Home />
         </Route>
       </Switch>
 

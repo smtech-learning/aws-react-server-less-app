@@ -4,8 +4,12 @@ import { device } from "./device";
 import logo from "../Images/cloudthoughts-3.png";
 import { Route, Switch, Link } from "react-router-dom";
 import HamburgerMenu from "../Components/HamburgerMenu";
+import { useParams, useHistory } from "react-router-dom";
 
 export default function PreloginNavigation() {
+  const history = useHistory();
+  console.log(history);
+
   const Nav = styled.nav`
     background: white;
     display: flex;
