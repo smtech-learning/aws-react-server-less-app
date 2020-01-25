@@ -2,8 +2,12 @@ import React, { useState, useContext } from "react";
 import styled, { css } from "styled-components";
 import { device } from "./device";
 import { Context } from "./ContextOneProvider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import {} from "@fortawesome/free-regular-svg-icons";
+import { FaSignInAlt } from "react-icons/fa";
+import { FaKeyboard } from "react-icons/fa";
+import { FaQuestionCircle } from "react-icons/fa";
+import { FaTimesCircle } from "react-icons/fa";
+import { FaProductHunt } from "react-icons/fa";
 
 export default function SidebarMenu() {
   const { show, toggleShow } = useContext(Context);
@@ -55,18 +59,29 @@ export default function SidebarMenu() {
     <SpecialSidebarDiv id='sidebar' className={show ? "active" : ""}>
       <ul>
         <SidebarLineItem>
-          <FontAwesomeIcon className='social-icon' icon={faCoffee} size='2x' />
-          Login
+          <FaSignInAlt className='social-icon-sidebar-menu fa-2x' />
+          <span className='sidebar-menu-pointer'> Login</span>
         </SidebarLineItem>
-        <SidebarLineItem> Register</SidebarLineItem>
-        <SidebarLineItem> Products</SidebarLineItem>
-        <SidebarLineItem> Help</SidebarLineItem>
+        <SidebarLineItem>
+          <FaKeyboard className='social-icon-sidebar-menu fa-2x' />
+          <span className='sidebar-menu-pointer'> Register</span>
+        </SidebarLineItem>
+        <SidebarLineItem>
+          <span className='sidebar-menu-pointer'>
+            <FaProductHunt className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Products</span>
+          </span>
+        </SidebarLineItem>
+        <SidebarLineItem>
+          <FaQuestionCircle className='social-icon-sidebar-menu fa-2x' />
+          <span className='sidebar-menu-pointer'> Help </span>
+        </SidebarLineItem>
       </ul>
 
       <ul>
         <SidebarLineItem>
           <span id='close' onClick={toggleShow1}>
-            X
+            <FaTimesCircle className='social-icon-sidebar-menu fa-2x' />
           </span>
         </SidebarLineItem>
       </ul>

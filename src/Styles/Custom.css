@@ -194,6 +194,16 @@
   margin: 10% 15%;
 }
 
+.social-icon-sidebar-menu {
+  padding-right: 1rem;
+  size: 6x;
+  cursor: pointer;
+}
+
+.sidebar-menu-pointer{
+  cursor: pointer;
+}
+
 .loginWrapper {
   margin: 20px;
   background: #fff;
