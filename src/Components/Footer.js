@@ -25,14 +25,18 @@ export default function Footer() {
         target='_blank'
         className='link-style social-icon-footer'
       >
-        <FontAwesomeIcon icon={faYoutube} size='2x' />
+        <FontAwesomeIcon
+          style={{ color: "darkred" }}
+          icon={faYoutube}
+          size='2x'
+        />
       </a>
       <a
         href='https://medium.com/@sureshmunnangi'
         target='_blank'
         className='link-style social-icon-footer'
       >
-        <FontAwesomeIcon icon={faMedium} size='2x' />
+        <FontAwesomeIcon style={{ color: "black" }} icon={faMedium} size='2x' />
       </a>
       <a
         href='https://twitter.com/sureshmunnangi'
@@ -46,7 +50,7 @@ export default function Footer() {
         target='_blank'
         className='link-style social-icon-footer'
       >
-        <FontAwesomeIcon icon={faGithub} size='2x' />
+        <FontAwesomeIcon style={{ color: "black" }} icon={faGithub} size='2x' />
       </a>
     </div>
   );
