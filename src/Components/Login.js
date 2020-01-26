@@ -131,8 +131,101 @@ function Login() {
           <Wrapper>
             {hasError && <h5 className='errorStyle'> {errorDescription}</h5>}
             <form>
-              {/* <StyledTextField id='standard-basic' label='enter e-mail id dsss' /> */}
-              <Input
+              {/* <StyledTextField id='standard-basic' label='enter e-mail id dsss' /> 
+            
+            <div class="form-group">
+                <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                      <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                  </div>
+                </div>
+              <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                </div>
+            </div>        
+              <div class="form-group">
+                  <button type="submit" class="btn btn-success btn-block login-btn">Sign in</button>
+              </div>
+            
+            
+            */}
+              <div class='text-center social-btn'>
+                {/*  
+                 <a href='#' class='btn btn-primary btn-block'>
+                  <i class='fa fa-facebook'></i> Sign in with <b>Facebook</b>
+                </a>
+                <a href='#' class='btn btn-info btn-block'>
+                  <i class='fa fa-twitter'></i> Sign in with <b>Twitter</b>
+                </a>
+                */}
+
+                <a href='#' class='btn btn-primary btn-block'>
+                  <i class='fa fa-google'></i> Sign in with <b>Google</b>
+                </a>
+              </div>
+              <div class='or-seperator'>
+                <i>or</i>
+              </div>
+              <div class='form-group'>
+                <div class='input-group'>
+                  <span class='input-group-addon'>
+                    <i class='fa fa-user'></i>
+                  </span>
+                  <input
+                    type='text'
+                    class='form-control'
+                    name='email'
+                    placeholder='Enter e-mail address'
+                    required='required'
+                    onChange={handlechnage}
+                  />
+                </div>
+              </div>
+              <div class='form-group'>
+                <div class='input-group'>
+                  <span class='input-group-addon'>
+                    <i class='fa fa-lock'></i>
+                  </span>
+                  <input
+                    type='password'
+                    class='form-control'
+                    name='password'
+                    placeholder='Enter Password'
+                    required='required'
+                    onChange={handlechnage}
+                  />
+                </div>
+              </div>
+              <div class='form-group'>
+                <button
+                  type='submit'
+                  class='btn btn-success btn-block login-btn'
+                  onClick={PageLogin}
+                >
+                  Sign in
+                </button>
+              </div>
+
+              <div class='clearfix'>
+                <label class='pull-left checkbox-inline'>
+                  <input type='checkbox' /> Remember me
+                </label>
+                <a href='#' class='pull-right text-success'>
+                  Forgot Password?
+                </a>
+              </div>
+
+              <div class='hint-text small'>
+                Don't have an account?{" "}
+                <a href='#' class='text-success'>
+                  Register Now!
+                </a>
+              </div>
+
+              {/* 
+               <Input
                 className='input-style'
                 onChange={handlechnage}
                 type='text'
@@ -159,6 +252,8 @@ function Login() {
                   Sign-up
                 </Link>
               </ButtonsSection>
+              
+              */}
             </form>
           </Wrapper>
         </LoginInputSection>

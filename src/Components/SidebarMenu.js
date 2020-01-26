@@ -16,7 +16,7 @@ export default function SidebarMenu() {
   const SidebarDiv = styled.div`
   
     position: absolute;
-    z-index:2
+    z-index:99
     width: 300px;
     height: 75.5%;
     // background: #3e88a3  -> This is the color of the background image itself so not using this color but keeping here for reference.
