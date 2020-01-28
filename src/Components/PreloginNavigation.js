@@ -63,13 +63,11 @@ export default function PreloginNavigation() {
         <UnorderedList>
           <LineItem>
             <Link to='/login' className='main-menu-center-both'>
-              {" "}
               <FaSignInAlt className='social-icon-menu fa-1x' /> Login
             </Link>
           </LineItem>
           <LineItem>
             <Link to='/register' className='main-menu-center-both'>
-              {" "}
               <FaKeyboard className='social-icon-menu fa-1x' /> Register
             </Link>
           </LineItem>

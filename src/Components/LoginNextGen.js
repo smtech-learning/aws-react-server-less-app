@@ -22,7 +22,6 @@ export default function LoginNextGen() {
       background-image: url(${LoginBig});
     }
     background-image: url(${LoginWithKeyboard});
-    //  background-image: url("../Images/login-with-key.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -31,6 +30,7 @@ export default function LoginNextGen() {
     flex-direction: row;
     @media ${device.tablet} {
       justify-content: flex-end;
+      
     }
     justify-content: flex-start;
     /* align-items: center; */

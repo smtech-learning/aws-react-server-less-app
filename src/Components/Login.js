@@ -38,6 +38,10 @@ const Wrapper = styled(Card)`
 `;
 
 const LoginInputSection = styled.div`
+  @media ${device.tablet} {
+    max-width: 400px;
+  }
+  max-width: 350px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -46,9 +50,9 @@ const LoginInputSection = styled.div`
 
 /* The below component is NOT in use I kept fopr some reference code if I were to use plain old CSS versus MaterialUI*/
 const LoginWrapper = styled.div`
-  margin: 20px;
+  margin: 10px;
   background: #fff;
-  padding: 50px;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px gray;
   background-size: cover;
