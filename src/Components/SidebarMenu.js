@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Switch, Route, Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { device } from "./device";
 import { Context } from "./ContextOneProvider";
@@ -60,28 +61,38 @@ export default function SidebarMenu() {
     <SpecialSidebarDiv id='sidebar' className={show ? "active" : ""}>
       <ul>
         <SidebarLineItem>
-          <FaSignInAlt className='social-icon-sidebar-menu fa-2x' />
-          <span className='sidebar-menu-pointer'> Login</span>
+          <Link to='/login'>
+            <FaSignInAlt className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Login</span>
+          </Link>
         </SidebarLineItem>
         <SidebarLineItem>
-          <FaKeyboard className='social-icon-sidebar-menu fa-2x' />
-          <span className='sidebar-menu-pointer'> Register</span>
+          <Link to='/register'>
+            <FaKeyboard className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Register</span>
+          </Link>
         </SidebarLineItem>
         <SidebarLineItem>
-          <span className='sidebar-menu-pointer'>
-            <FaPencilAlt className='social-icon-sidebar-menu fa-2x' />
-            <span className='sidebar-menu-pointer'> Architecture</span>
-          </span>
+          <Link to='/architecture'>
+            <span className='sidebar-menu-pointer'>
+              <FaPencilAlt className='social-icon-sidebar-menu fa-2x' />
+              <span className='sidebar-menu-pointer'> Architecture</span>
+            </span>
+          </Link>
         </SidebarLineItem>
         <SidebarLineItem>
-          <span className='sidebar-menu-pointer'>
-            <FaAws className='social-icon-sidebar-menu fa-2x' />
-            <span className='sidebar-menu-pointer'> Services</span>
-          </span>
+          <Link to='/services'>
+            <span className='sidebar-menu-pointer'>
+              <FaAws className='social-icon-sidebar-menu fa-2x' />
+              <span className='sidebar-menu-pointer'> Services</span>
+            </span>
+          </Link>
         </SidebarLineItem>
         <SidebarLineItem>
-          <FaQuestionCircle className='social-icon-sidebar-menu fa-2x' />
-          <span className='sidebar-menu-pointer'> Help </span>
+          <Link to='/help'>
+            <FaQuestionCircle className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Help </span>
+          </Link>
         </SidebarLineItem>
       </ul>
 

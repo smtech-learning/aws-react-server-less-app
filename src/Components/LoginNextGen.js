@@ -1,17 +1,16 @@
 import React from "react";
 import PreloginNavigation from "./PreloginNavigation";
-import PreLoginBody from "./PreLoginBody";
+import Register from "./Register";
 import Footer from "./Footer";
 import { Switch, Route } from "react-router-dom";
 import Login from "../Components/Login";
-import NoMatch from "../Components/NoMatch";
 import SidebarMenu from "../Components/SidebarMenu";
 import styled from "styled-components";
 import { device } from "./device";
 import LoginBig from "../Images/login.jpg";
-import LoginMedium from "../Images/key-medium-image.jpg";
-import LoginSmall from "../Images/key-small-image.jpg";
 import LoginWithKeyboard from "../Images/login-with-key.jpg";
+import RegisterCloudImage from "../Images/Cloud-Road.jpeg";
+
 import Slider from "../Components/Slider";
 import Home from "./Home";
 
@@ -30,7 +29,25 @@ export default function LoginNextGen() {
     flex-direction: row;
     @media ${device.tablet} {
       justify-content: flex-end;
-      
+    }
+    justify-content: flex-start;
+    /* align-items: center; */
+  `;
+
+  const RegisterBackground = styled.div`
+    grid-area: body;
+    @media ${device.tablet} {
+      background-image: url(${RegisterCloudImage});
+    }
+    background-image: url(${RegisterCloudImage});
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: row;
+    @media ${device.tablet} {
+      justify-content: flex-end;
     }
     justify-content: flex-start;
     /* align-items: center; */
@@ -53,6 +70,11 @@ export default function LoginNextGen() {
           <LoginBackground>
             <Login />
           </LoginBackground>
+        </Route>
+        <Route path='/register'>
+          <RegisterBackground>
+            <Register />
+          </RegisterBackground>
         </Route>
         <Route path='/home'>
           <Home />

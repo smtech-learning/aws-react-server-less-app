@@ -26,7 +26,8 @@ class App extends Component {
           <Route path='/' exact component={LoginNextGen} />
           <Route path='/login' exact component={LoginNextGen} />
           <Route path='/register' component={LoginNextGen} />
-          <Route path='/products' exact component={LoginNextGen} />
+          <Route path='/architecture' component={LoginNextGen} />
+          <Route path='/services' component={LoginNextGen} />
           <Route path='/help' exact component={LoginNextGen} />
           <Route path='/home' component={Home} />
         </Switch>
