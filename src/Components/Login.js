@@ -135,36 +135,7 @@ function Login() {
           <Wrapper>
             {hasError && <h5 className='errorStyle'> {errorDescription}</h5>}
             <form>
-              {/* <StyledTextField id='standard-basic' label='enter e-mail id dsss' /> 
-            
-            <div class="form-group">
-                <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                      <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-                  </div>
-                </div>
-              <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-                </div>
-            </div>        
-              <div class="form-group">
-                  <button type="submit" class="btn btn-success btn-block login-btn">Sign in</button>
-              </div>
-            
-            
-            */}
               <div class='text-center social-btn'>
-                {/*  
-                 <a href='#' class='btn btn-primary btn-block'>
-                  <i class='fa fa-facebook'></i> Sign in with <b>Facebook</b>
-                </a>
-                <a href='#' class='btn btn-info btn-block'>
-                  <i class='fa fa-twitter'></i> Sign in with <b>Twitter</b>
-                </a>
-                */}
-
                 <a href='#' class='btn btn-primary btn-block'>
                   <i class='fa fa-google'></i> Sign in with <b>Google</b>
                 </a>
@@ -227,37 +198,6 @@ function Login() {
                   Register Now!
                 </a>
               </div>
-
-              {/* 
-               <Input
-                className='input-style'
-                onChange={handlechnage}
-                type='text'
-                name='email'
-                id='email'
-                placeholder='Enter e-mail address'
-              />
-              <br /> <br />
-              <Input
-                className='input-style'
-                autoComplete='new-password'
-                onChange={handlechnage}
-                type='password'
-                name='password'
-                id='password'
-                placeholder='Enter Password'
-              />
-              <ButtonsSection>
-                <Link className='btn btn-primary'>
-                  <div onClick={PageLogin}>Let's Go </div>
-                </Link>
-
-                <Link className='btn btn-primary' to='/register'>
-                  Sign-up
-                </Link>
-              </ButtonsSection>
-              
-              */}
             </form>
           </Wrapper>
         </LoginInputSection>

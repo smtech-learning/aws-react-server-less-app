@@ -1,12 +1,49 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import registration from "../Images/registration.png";
+import styled, { ThemeProvider } from "styled-components";
+import { StylesProvider } from "@material-ui/styles";
+import TextField from "@material-ui/core/TextField";
+import Card from "@material-ui/core/Card";
+import { device } from "./device";
 
 const countErrors = errors => {
   let count = 0;
   Object.values(errors).forEach(val => val.length > 0 && (count = count + 1));
+  console.log("error count" + count);
   return count;
 };
+
+const theme = {
+  colors: {
+    primary: "#0077B5",
+    secondary: "#000000"
+  }
+};
+
+const Wrapper = styled(Card)`
+  margin: 20px;
+  background: ${props => props.theme.colors.primary};
+  padding: 50px;
+  border-radius: 5px;
+  // box-shadow: 5px 5px 5px gray;
+  // box-shadow: 0 2px 50px 0 #0076ff;
+  box-shadow: 0 2px 50px 0 #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const LoginInputSection = styled.div`
+  @media ${device.tablet} {
+    max-width: 400px;
+  }
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 
 class Register extends Component {
   constructor(props) {
@@ -32,13 +69,13 @@ class Register extends Component {
   }
 
   handleChange = event => {
-    event.preventDefault();
     const { name, value } = event.target;
     let errors = this.state.errors;
     const validEmailRegex = RegExp(
       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
 
+    console.log("typed event-> " + name);
     switch (name) {
       case "username":
         errors.username = validEmailRegex.test(value)
@@ -49,11 +86,11 @@ class Register extends Component {
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
         break;
 
-      case "phone_number":
-        errors.phone_number = validEmailRegex.test(value)
-          ? ""
-          : "Phone Number is not valid! REMEMBER : (Format should be: +1XXXXXXXXXX) including +1. For example a valid one is : +18001231234";
-        break;
+      //   case "phone_number":
+      //     errors.phone_number = validEmailRegex.test(value)
+      //       ? ""
+      //       : "Phone Number is not valid! REMEMBER : (Format should be: +1XXXXXXXXXX) including +1. For example a valid one is : +18001231234";
+      //     break;
       case "password":
         errors.password =
           value.length < 8 ? "Password must be minimum 8 characters long!" : "";
@@ -89,6 +126,8 @@ class Register extends Component {
 
   handlesubmit(e) {
     e.preventDefault();
+    console.log("in else condition 1st");
+
     const {
       username,
       password,
@@ -98,6 +137,8 @@ class Register extends Component {
       confirmed
     } = this.state;
     if (!signedup && !confirmed) {
+      console.log("in else condition -2nd");
+
       Auth.signUp({
         username,
         password,
@@ -117,6 +158,7 @@ class Register extends Component {
           this.setState({ errorDescription: err.message });
         });
     } else if (signedup && !confirmed) {
+      console.log("in else condition - 3rd");
       const { username, confirmation_code } = this.state;
       Auth.confirmSignUp(username, confirmation_code, {
         forceAliasCreation: true
@@ -130,7 +172,9 @@ class Register extends Component {
           this.setState({ errorDescription: err.message });
         });
     } else if (signedup && confirmed) {
+      console.log("in else condition - 4th");
     }
+    console.log("in else condition -5th");
   }
 
   render() {
@@ -138,110 +182,158 @@ class Register extends Component {
       const { errors, errorcount, isFormValid } = this.state;
 
       return (
-        <div className='register-container'>
-          <img src={registration} height='250px' />
+        <StylesProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <LoginInputSection>
+              <Wrapper>
+                <form onSubmit={this.handlesubmit} autoComplete='off'>
+                  {this.state.hasError && (
+                    <h5 className='errorStyle'>
+                      {this.state.errorDescription}
+                    </h5>
+                  )}
 
-          <form
-            onSubmit={this.handlesubmit}
-            class='form-container'
-            autoComplete='off'
-          >
-            <input
-              id='_suburb'
-              type='text'
-              style={{ display: "none" }}
-              disabled
-            />
-            {this.state.hasError && (
-              <h5 className='errorStyle'> {this.state.errorDescription}</h5>
-            )}
-            <input
-              type='text'
-              autocomplete='off_randomstring'
-              className='login-style'
-              name='username'
-              placeholder='Enter e-mail address (You would use this to login)'
-              onChange={this.handleChange}
-            />
-            {errors.username.length > 0 && (
-              <span className='errorStyle'>{errors.username}</span>
-            )}
-            <input
-              type='text'
-              autocomplete='off_randomstring'
-              className='login-style'
-              name='email'
-              placeholder='Re-enter the e-mail address'
-              onChange={this.handleChange}
-            />
-            {errors.email.length > 0 && (
-              <span className='errorStyle'>{errors.email}</span>
-            )}
-            <input
-              type='password'
-              autocomplete='new-password'
-              className='login-style'
-              name='password'
-              placeholder='Enter Password (minimum 8 characters is needed)'
-              onChange={this.handleChange}
-            />
+                  <div class='form-group'>
+                    <div class='input-group'>
+                      <span class='input-group-addon'>
+                        <i class='fa fa-user'></i>
+                      </span>
+                      <input
+                        type='text'
+                        class='form-control'
+                        autocomplete='off_randomstring'
+                        name='username'
+                        placeholder='Enter e-mail address'
+                        required='required'
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
 
-            {errors.password.length > 0 && (
-              <span className='errorStyle'>{errors.password}</span>
-            )}
+                  {errors.username.length > 0 && (
+                    <span className='errorStyle'>{errors.username}</span>
+                  )}
 
-            <input
-              type='text'
-              autocomplete='off_randomstring'
-              className='login-style'
-              name='phone_number'
-              placeholder='Enter Phone Number (Format should be: +1XXXXXXXXXX)'
-              onChange={this.handleChange}
-            />
-            {errors.phone_number.length > 0 && (
-              <span className='errorStyle'>{errors.phone_number}</span>
-            )}
-            <br />
-            <button
-              className='btn btn-primary'
-              disabled={errorcount > 0 || !isFormValid}
-            >
-              {" "}
-              Submit (all 4 fields are manadatory)
-            </button>
-          </form>
-        </div>
+                  <div class='form-group'>
+                    <div class='input-group'>
+                      <span class='input-group-addon'>
+                        <i class='fa fa-user'></i>
+                      </span>
+                      <input
+                        type='text'
+                        class='form-control'
+                        autocomplete='off_randomstring'
+                        name='email'
+                        placeholder='re-enter e-mail address'
+                        required='required'
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  {errors.email.length > 0 && (
+                    <span className='errorStyle'>{errors.email}</span>
+                  )}
+
+                  <div class='form-group'>
+                    <div class='input-group'>
+                      <span class='input-group-addon'>
+                        <i class='fa fa-user'></i>
+                      </span>
+                      <input
+                        type='password'
+                        class='form-control'
+                        autocomplete='off_randomstring'
+                        name='password'
+                        placeholder='Enter Password (minimum 8 characters is needed)'
+                        required='required'
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  {errors.password.length > 0 && (
+                    <span className='errorStyle'>{errors.password}</span>
+                  )}
+
+                  <div class='form-group'>
+                    <div class='input-group'>
+                      <span class='input-group-addon'>
+                        <i class='fa fa-user'></i>
+                      </span>
+                      <input
+                        type='text'
+                        class='form-control'
+                        autocomplete='off_randomstring'
+                        name='phone_number'
+                        placeholder='Enter Phone Number (Format should be: +1XXXXXXXXXX)'
+                        required='required'
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  {errors.phone_number.length > 0 && (
+                    <span className='errorStyle'>{errors.phone_number}</span>
+                  )}
+                  <br />
+                  <button
+                    className='btn btn-primary'
+                    disabled={errorcount > 0 || !isFormValid}
+                  >
+                    Submit (all 4 fields are manadatory)
+                  </button>
+                </form>
+              </Wrapper>
+            </LoginInputSection>
+          </ThemeProvider>
+        </StylesProvider>
       );
     } else if (this.state.signedup && !this.state.confirmed) {
       return (
-        <div className='register-container'>
-          <img src={registration} height='250px' />
-          <form onSubmit={this.handlesubmit} class='form-container'>
-            <h5>
-              {" "}
-              Stay on this Page. You should have received the verification code
-              in the e-mail. Plese check the e-mail and enter the verification
-              code below and click Submit !
-            </h5>
-            {this.state.hasError && (
-              <h5 className='errorStyle'> {this.state.errorDescription}</h5>
-            )}
-            <input
-              type='text'
-              name='confirmation_code'
-              className='login-style'
-              placeholder='Enter Verification Code'
-              onChange={this.handleChange}
-            />
-            <br />
-            <button className='btn btn-primary'> Submit </button>
-          </form>
-        </div>
+        <StylesProvider injectFirst>
+          <ThemeProvider theme={theme}>
+            <LoginInputSection>
+              <Wrapper>
+                <form onSubmit={this.handlesubmit} autoComplete='off'>
+                  <h5>
+                    Stay on this Page. You should have received the verification
+                    code in the e-mail. Plese check the e-mail and enter the
+                    verification code below and click Submit !
+                  </h5>
+                  {this.state.hasError && (
+                    <h5 className='errorStyle'>
+                      {this.state.errorDescription}
+                    </h5>
+                  )}
+
+                  <div class='form-group'>
+                    <div class='input-group'>
+                      <span class='input-group-addon'>
+                        <i class='fa fa-user'></i>
+                      </span>
+                      <input
+                        type='text'
+                        class='form-control'
+                        autocomplete='off_randomstring'
+                        name='confirmation_code'
+                        placeholder='Enter Verification Code'
+                        required='required'
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                  </div>
+                  <br />
+                  <button className='btn btn-primary'> Submit </button>
+                </form>
+              </Wrapper>
+            </LoginInputSection>
+          </ThemeProvider>
+        </StylesProvider>
       );
     } else if (this.state.signedup && this.state.confirmed) {
       return (
         <div className='register-container'>
-          <img src={registration} height='250px' />
           <div className='form-container'>
             <h3> Congratulations !! Registration successfully completed. </h3>
             <br />
