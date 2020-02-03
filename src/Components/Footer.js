@@ -46,7 +46,7 @@ export default function Footer() {
         <FontAwesomeIcon icon={faTwitter} size='2x' />
       </a>
       <a
-        href='https://github.com/smtech-learning'
+        href='https://github.com/smtech-learning?tab=repositories'
         target='_blank'
         className='link-style social-icon-footer'
       >
