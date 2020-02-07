@@ -13,14 +13,18 @@ import {
   withRouter,
   Switch
 } from "react-router-dom";
-import awsconfig from "./aws-exports";
-import { withAuthenticator } from "aws-amplify-react";
+
 
 Amplify.configure(awsmobile);
 
+
+
 class App extends Component {
+
+
   render() {
     return (
+  
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={LoginNextGen} />
@@ -28,7 +32,7 @@ class App extends Component {
           <Route path='/register' component={LoginNextGen} />
           <Route path='/architecture' component={LoginNextGen} />
           <Route path='/services' component={LoginNextGen} />
-          <Route path='/help' exact component={LoginNextGen} />
+          <Route path='/help' component={LoginNextGen} />
           <Route path='/home' component={Home} />
         </Switch>
       </BrowserRouter>

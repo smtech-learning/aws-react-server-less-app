@@ -77,11 +77,11 @@ class Register extends Component {
 
     console.log("typed event-> " + name);
     switch (name) {
-      case "username":
-        errors.username = validEmailRegex.test(value)
-          ? ""
-          : "Email is not valid!";
-        break;
+      //   case "username":
+      //     errors.username = validEmailRegex.test(value)
+      //       ? ""
+      //       : "Email is not valid!";
+      //     break;
       case "email":
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
         break;
@@ -137,8 +137,6 @@ class Register extends Component {
       confirmed
     } = this.state;
     if (!signedup && !confirmed) {
-      console.log("in else condition -2nd");
-
       Auth.signUp({
         username,
         password,
@@ -158,7 +156,6 @@ class Register extends Component {
           this.setState({ errorDescription: err.message });
         });
     } else if (signedup && !confirmed) {
-      console.log("in else condition - 3rd");
       const { username, confirmation_code } = this.state;
       Auth.confirmSignUp(username, confirmation_code, {
         forceAliasCreation: true
@@ -174,7 +171,6 @@ class Register extends Component {
     } else if (signedup && confirmed) {
       console.log("in else condition - 4th");
     }
-    console.log("in else condition -5th");
   }
 
   render() {

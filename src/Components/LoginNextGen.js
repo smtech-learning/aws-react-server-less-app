@@ -10,6 +10,8 @@ import { device } from "./device";
 import LoginBig from "../Images/login.jpg";
 import LoginWithKeyboard from "../Images/login-with-key.jpg";
 import RegisterCloudImage from "../Images/Cloud-Road.jpeg";
+import HelpImage from "../Images/help.jpg";
+import Help from "./Help";
 
 import Slider from "../Components/Slider";
 import Home from "./Home";
@@ -53,6 +55,25 @@ export default function LoginNextGen() {
     /* align-items: center; */
   `;
 
+  const HelpBackground = styled.div`
+    grid-area: body;
+    @media ${device.tablet} {
+      background-image: url(${HelpImage});
+    }
+    background-image: url(${HelpImage});
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: row;
+    @media ${device.tablet} {
+      justify-content: flex-end;
+    }
+    justify-content: flex-start;
+    /* align-items: center; */
+  `;
+
   return (
     <div className='login-container'>
       <div className='header-item'>
@@ -78,6 +99,12 @@ export default function LoginNextGen() {
         </Route>
         <Route path='/home'>
           <Home />
+        </Route>
+        <Route path='/help'>
+          <HelpBackground>
+            {" "}
+            <Help />
+          </HelpBackground>
         </Route>
       </Switch>
 
