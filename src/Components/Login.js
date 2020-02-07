@@ -152,7 +152,7 @@ function Login() {
                     type='text'
                     class='form-control'
                     name='email'
-                    placeholder='Enter e-mail address'
+                    placeholder='Enter user id'
                     required='required'
                     onChange={handlechnage}
                   />

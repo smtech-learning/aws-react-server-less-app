@@ -199,7 +199,7 @@ class Register extends Component {
                         class='form-control'
                         autocomplete='off_randomstring'
                         name='username'
-                        placeholder='Enter e-mail address'
+                        placeholder='Enter user id (min 8 length)'
                         required='required'
                         onChange={this.handleChange}
                       />
@@ -220,7 +220,7 @@ class Register extends Component {
                         class='form-control'
                         autocomplete='off_randomstring'
                         name='email'
-                        placeholder='re-enter e-mail address'
+                        placeholder='Enter e-mail address'
                         required='required'
                         onChange={this.handleChange}
                       />
