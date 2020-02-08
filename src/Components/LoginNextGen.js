@@ -12,6 +12,7 @@ import LoginWithKeyboard from "../Images/login-with-key.jpg";
 import RegisterCloudImage from "../Images/Cloud-Road.jpeg";
 import HelpImage from "../Images/help.jpg";
 import Help from "./Help";
+import ForgotPassword from "./ForgotPassword";
 
 import Slider from "../Components/Slider";
 import Home from "./Home";
@@ -83,13 +84,17 @@ export default function LoginNextGen() {
       <Switch>
         <Route path='/' exact>
           <div className='body-item'>
-            {/* <PreLoginBody /> */}
             <Slider />
           </div>
         </Route>
         <Route path='/login'>
           <LoginBackground>
             <Login />
+          </LoginBackground>
+        </Route>
+        <Route path='/forgotpassword'>
+          <LoginBackground>
+            <ForgotPassword />
           </LoginBackground>
         </Route>
         <Route path='/register'>
@@ -102,7 +107,6 @@ export default function LoginNextGen() {
         </Route>
         <Route path='/help'>
           <HelpBackground>
-            {" "}
             <Help />
           </HelpBackground>
         </Route>

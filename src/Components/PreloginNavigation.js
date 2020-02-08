@@ -71,6 +71,7 @@ export default function PreloginNavigation() {
               <FaKeyboard className='social-icon-menu fa-1x' /> Register
             </Link>
           </LineItem>
+
           <LineItem>
             <Link to='/architecture' className='main-menu-center-both'>
               <FaPencilAlt className='social-icon-menu fa-1x' /> Architecture

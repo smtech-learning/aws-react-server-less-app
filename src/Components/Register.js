@@ -6,6 +6,14 @@ import { StylesProvider } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import { device } from "./device";
+import {
+  Route,
+  Link,
+  withRouter,
+  Switch,
+  useHistory,
+  useParams
+} from "react-router-dom";
 
 const countErrors = errors => {
   let count = 0;
@@ -279,6 +287,11 @@ class Register extends Component {
                   >
                     Submit (all 4 fields are manadatory)
                   </button>
+                  <div class='clearfix'>
+                    <Link to='/login' className='pull-right text-success'>
+                      Login Instaed ?
+                    </Link>
+                  </div>
                 </form>
               </Wrapper>
             </LoginInputSection>

@@ -16,7 +16,6 @@ import Button from "@material-ui/core/Button";
 import { StylesProvider } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
-import ForgotPassword from "./ForgotPassword";
 
 const theme = {
   colors: {
@@ -101,32 +100,97 @@ const StyledTextField = styled(TextField)`
   font-size: 40;
 `;
 
-function Login() {
+function ForgotPassword() {
   const [hasError, setHasError] = useState(false);
   const [errorDescription, setErrorDescription] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [errors, setErrors] = useState("");
+  const [errorcount, setErrorcount] = useState("");
+  const [isFormvalid, setIsFormvalid] = useState(false);
+  const [signedup, setSignedup] = useState(false);
 
   const history = useHistory();
   console.log(history);
 
-  const handlechnage = e => {
-    if (e.target.name === "email") {
-      setEmail(e.target.value);
-    } else if (e.target.name === "password") {
-      setPassword(e.target.value);
+  const handleChange = event => {
+    const { name, value } = event.target;
+    let errors = errors;
+
+    console.log("typed event-> " + name);
+    switch (name) {
+      case "username":
+        //     errors.username = validEmailRegex.test(value)
+        //       ? ""
+        //       : "Email is not valid!";
+        //     break;
+
+        setUsername(value);
+        break;
+
+      case "password":
+        errors.password =
+          value.length < 8 ? "Password must be minimum 8 characters long!" : "";
+        break;
+      default:
+        console.log("testing here");
+        break;
+    }
+
+    setErrors({ errors, [name]: value });
+
+    setErrorcount({ errors });
+    setIsFormvalid(isFormValid());
+  };
+
+  const countErrors = errors => {
+    let count = 0;
+    Object.values(errors).forEach(val => val.length > 0 && (count = count + 1));
+    return count;
+  };
+
+  const isFormValid = () => {
+    // const { username, password } = this.state;
+    if (username.length > 0 && password.length > 0) {
+      return true;
+    } else {
+      return false;
     }
   };
 
-  const PageLogin = async e => {
+  const handlesubmit = e => {
     e.preventDefault();
-    try {
-      await Auth.signIn(email, password);
-      history.push("/home");
-    } catch (e) {
-      setHasError(true);
-      setErrorDescription(e.message);
+    console.log("in else condition 1st");
+
+    if (!signedup) {
+      Auth.forgotPassword(username)
+        .then(data => {
+          console.log(data);
+          setSignedup(true);
+        })
+        .catch(err => {
+          setHasError(true);
+          setErrorDescription(err.message);
+        });
     }
+    //else if (signedup && !confirmed) {
+    //   const { username, confirmation_code } = this.state;
+    //   Auth.confirmSignUp(username, confirmation_code, {
+    //     forceAliasCreation: true
+    //   })
+    //     .then(data => {
+    //       this.setState({ confirmed: true });
+    //       this.setState({ username: "", email: "", confirmation_code: "" });
+    //     })
+    //     .catch(err => {
+    //       this.setState({ hasError: true });
+    //       this.setState({ errorDescription: err.message });
+    //     });
+    // } else if (signedup && confirmed) {
+    //   console.log("in else condition - 4th");
+    // }
   };
 
   return (
@@ -136,14 +200,6 @@ function Login() {
           <Wrapper>
             {hasError && <h5 className='errorStyle'> {errorDescription}</h5>}
             <form>
-              <div class='text-center social-btn'>
-                <a href='#' class='btn btn-primary btn-block'>
-                  <i class='fa fa-google'></i> Sign in with <b>Google</b>
-                </a>
-              </div>
-              <div class='or-seperator'>
-                <i>or</i>
-              </div>
               <div class='form-group'>
                 <div class='input-group'>
                   <span class='input-group-addon'>
@@ -152,41 +208,27 @@ function Login() {
                   <input
                     type='text'
                     class='form-control'
-                    name='email'
+                    name='username'
                     placeholder='Enter user id'
                     required='required'
-                    onChange={handlechnage}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
-              <div class='form-group'>
-                <div class='input-group'>
-                  <span class='input-group-addon'>
-                    <i class='fa fa-lock'></i>
-                  </span>
-                  <input
-                    type='password'
-                    class='form-control'
-                    name='password'
-                    placeholder='Enter Password'
-                    required='required'
-                    onChange={handlechnage}
-                  />
-                </div>
-              </div>
+
               <div class='form-group'>
                 <button
                   type='submit'
                   class='btn btn-success btn-block login-btn'
-                  onClick={PageLogin}
+                  onClick={handlesubmit}
                 >
-                  Sign in
+                  Send me the code
                 </button>
               </div>
 
               <div class='clearfix'>
-                <Link to='/forgotpassword' className='pull-right text-success'>
-                  Forgot Password?
+                <Link to='/login' className='pull-right text-success'>
+                  Login Instaed ?
                 </Link>
               </div>
 
@@ -204,4 +246,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
