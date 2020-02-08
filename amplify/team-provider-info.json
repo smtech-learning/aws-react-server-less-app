@@ -9,6 +9,13 @@
             "UnauthRoleName": "awsreactserverless-20190409214756-unauthRole",
             "StackName": "awsreactserverless-20190409214756",
             "StackId": "arn:aws:cloudformation:us-east-1:404920801017:stack/awsreactserverless-20190409214756/ab03b4b0-5b32-11e9-b027-0e7698e0f2e8"
+        },
+        "categories": {
+            "auth": {
+                "cognito7cfdc2ac": {
+                    "hostedUIProviderCreds": "[]"
+                }
+            }
         }
     }
 }

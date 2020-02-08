@@ -17,6 +17,7 @@ import { StylesProvider } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import ForgotPassword from "./ForgotPassword";
+import Buttons from "./Buttons";
 
 const theme = {
   colors: {
@@ -137,7 +138,11 @@ function Login() {
             {hasError && <h5 className='errorStyle'> {errorDescription}</h5>}
             <form>
               <div class='text-center social-btn'>
-                <a href='#' class='btn btn-primary btn-block'>
+                <a
+                  href='#'
+                  onClick={() => Auth.federatedSignIn({ provider: "Google" })}
+                  class='btn btn-primary btn-block'
+                >
                   <i class='fa fa-google'></i> Sign in with <b>Google</b>
                 </a>
               </div>
