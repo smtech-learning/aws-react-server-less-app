@@ -13,7 +13,7 @@ import RegisterCloudImage from "../Images/Cloud-Road.jpeg";
 import HelpImage from "../Images/help.jpg";
 import Help from "./Help";
 import ForgotPassword from "./ForgotPassword";
-
+import Architecture from "./Architecture";
 import Slider from "../Components/Slider";
 import Home from "./Home";
 
@@ -101,6 +101,9 @@ export default function LoginNextGen() {
           <RegisterBackground>
             <Register />
           </RegisterBackground>
+        </Route>
+        <Route path='/architecture'>
+          <Architecture />
         </Route>
         <Route path='/home'>
           <Home />
