@@ -144,7 +144,7 @@
   background-color: skyblue;
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 0.15fr 1fr 0.15fr;
+  grid-template-rows: 0.15fr auto 0.15fr;
   grid-template-areas: "header header header" "body body body" "footer footer footer";
 }
 

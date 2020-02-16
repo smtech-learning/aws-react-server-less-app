@@ -35,7 +35,7 @@ const Wrapper = styled(Card)`
   background-repeat: no-repeat;
 `;
 
-const LoginInputSection = styled.div`
+const HelpInputSection = styled.div`
   @media ${device.tablet} {
     max-width: 600px;
   }
@@ -59,7 +59,7 @@ class Help extends Component {
     return (
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <LoginInputSection>
+          <HelpInputSection>
             <Wrapper>
               <ChatBot
                 title='thecloudthoughts.com'
@@ -70,7 +70,7 @@ class Help extends Component {
                 clearOnComplete={true}
               />
             </Wrapper>
-          </LoginInputSection>
+          </HelpInputSection>
         </ThemeProvider>
       </StylesProvider>
     );

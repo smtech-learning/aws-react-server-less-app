@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Parallax1 from "../Images/img_parallax.jpg";
 import Parallax2 from "../Images/img_parallax2.jpg";
 import Parallax3 from "../Images/img_parallax3.jpg";
+import video from "../Images/rain.mp4";
 
 // body, html {
 //     height: 100%;
@@ -102,6 +103,14 @@ const H3 = styled.h3`
   color: #111;
 `;
 
+const Video = styled.video`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+`;
+
 //   /* Turn off parallax scrolling for tablets and phones */
 //   @media only screen and (max-device-width: 1024px) {
 //     .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -117,7 +126,12 @@ const Architecture = () => {
           <Span>Serverless Architecture</Span>
         </Caption>
       </BgImage1>
-
+      {/*
+        <Video autoplay loop id='myVideo'>
+         <source src={video} type='video/mp4' />
+         Your browser does not support HTML5 video.
+         </Video>
+      */}
       <ParallaxStyle>
         <H3 style={{ textAlign: "center" }}>Parallax Demo</H3>
         <p>
