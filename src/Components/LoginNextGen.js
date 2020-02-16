@@ -56,6 +56,20 @@ export default function LoginNextGen() {
     /* align-items: center; */
   `;
 
+  const ArchitectureBackground = styled.div`
+    grid-area: body;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: row;
+    @media ${device.tablet} {
+      justify-content: flex-end;
+    }
+    justify-content: flex-start;
+  `;
+
   const HelpBackground = styled.div`
     grid-area: body;
     @media ${device.tablet} {
@@ -103,7 +117,9 @@ export default function LoginNextGen() {
           </RegisterBackground>
         </Route>
         <Route path='/architecture'>
-          <Architecture />
+          <ArchitectureBackground>
+            <Architecture />
+          </ArchitectureBackground>
         </Route>
         <Route path='/home'>
           <Home />

@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
-import Parallax1 from "../Images/Parallax1.jpeg";
-import Parallax2 from "../Images/Parralax2.jpeg";
-import Parallax3 from "../Images/Parralax3.jpeg";
+import Parallax1 from "../Images/img_parallax.jpg";
+import Parallax2 from "../Images/img_parallax2.jpg";
+import Parallax3 from "../Images/img_parallax3.jpg";
 
 // body, html {
 //     height: 100%;
@@ -13,7 +13,14 @@ import Parallax3 from "../Images/Parralax3.jpeg";
 //     color: #777;
 //   }
 
-const BigImage = styled.div`
+const MainDiv = styled.div`
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+`;
+
+const BigImage = `
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
@@ -45,6 +52,7 @@ const ScrollUpStyle = styled.div`
 `;
 
 const BgImage1 = styled.div`
+  ${BigImage}
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
@@ -53,6 +61,7 @@ const BgImage1 = styled.div`
 `;
 
 const BgImage2 = styled.div`
+  ${BigImage}
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
@@ -61,6 +70,7 @@ const BgImage2 = styled.div`
 `;
 
 const BgImage3 = styled.div`
+  ${BigImage}
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
@@ -101,12 +111,12 @@ const H3 = styled.h3`
 
 const Architecture = () => {
   return (
-    <div>
-      <BigImage>
+    <MainDiv>
+      <BgImage1>
         <Caption>
-          <Span>SCROLL DOWN</Span>
+          <Span>Serverless Architecture</Span>
         </Caption>
-      </BigImage>
+      </BgImage1>
 
       <ParallaxStyle>
         <H3 style={{ textAlign: "center" }}>Parallax Demo</H3>
@@ -130,7 +140,15 @@ const Architecture = () => {
 
       <BgImage2>
         <Caption>
-          <Span>LESS HEIGHT</Span>
+          <Span
+            style={{
+              backgroundColor: "transparent",
+              fontSize: "25px",
+              color: "#f7f7f7"
+            }}
+          >
+            LESS HEIGHT
+          </Span>
         </Caption>
       </BgImage2>
 
@@ -156,7 +174,6 @@ const Architecture = () => {
           </Span>
         </Caption>
       </BgImage3>
-
       <div style={{ position: "relative" }}>
         <div
           style={{
@@ -174,12 +191,36 @@ const Architecture = () => {
         </div>
       </div>
 
-      <BgImage1>
+      <BgImage3>
         <Caption>
-          <Span>COOL!</Span>
+          <Span
+            style={{
+              backgroundColor: "transparent",
+              fontSize: "25px",
+              color: "#f7f7f7"
+            }}
+          >
+            SCROLL UP
+          </Span>
         </Caption>
-      </BgImage1>
-    </div>
+      </BgImage3>
+      <div style={{ position: "relative" }}>
+        <div
+          style={{
+            color: "#ddd",
+            backgroundColor: "#282E34",
+            textAlign: "center",
+            padding: "50px 80px",
+            textAlign: "justify"
+          }}
+        >
+          <p>
+            Scroll up and down to really get the feeling of how Parallax
+            Scrolling works.
+          </p>
+        </div>
+      </div>
+    </MainDiv>
   );
 };
 export default Architecture;

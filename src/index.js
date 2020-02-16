@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
 import { ContextOneProvider } from "./Components/ContextOneProvider";
+import Architecture from "./Components/Architecture";
 
 ReactDOM.render(
   <ContextOneProvider>
