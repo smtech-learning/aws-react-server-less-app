@@ -72,7 +72,7 @@ export default function Slider() {
           <div class='legend'></div>
           <div class='content'>
             <div class='content-txt'>
-              <h1>Serverless DB</h1>
+              <h1>IAM, AuthZ/N, Serverless DB ... </h1>
               <h2>
                 Where the database will automatically start up, shut down, and
                 scale capacity up or down based on your application's needs. It

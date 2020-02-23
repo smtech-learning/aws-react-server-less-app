@@ -61,6 +61,12 @@ export default function SidebarMenu() {
     <SpecialSidebarDiv id='sidebar' className={show ? "active" : ""}>
       <ul>
         <SidebarLineItem>
+          <Link to='/'>
+            <FaSignInAlt className='social-icon-sidebar-menu fa-2x' />
+            <span className='sidebar-menu-pointer'> Home</span>
+          </Link>
+        </SidebarLineItem>
+        <SidebarLineItem>
           <Link to='/login'>
             <FaSignInAlt className='social-icon-sidebar-menu fa-2x' />
             <span className='sidebar-menu-pointer'> Login</span>

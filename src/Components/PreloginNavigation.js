@@ -6,6 +6,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import HamburgerMenu from "../Components/HamburgerMenu";
 import { useParams, useHistory } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { FaKeyboard } from "react-icons/fa";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaTimesCircle } from "react-icons/fa";
@@ -61,6 +62,11 @@ export default function PreloginNavigation() {
         <HamburgerMenu />
 
         <UnorderedList>
+          <LineItem>
+            <Link to='/' className='main-menu-center-both'>
+              <FaHome className='social-icon-menu fa-1x' /> Home
+            </Link>
+          </LineItem>
           <LineItem>
             <Link to='/login' className='main-menu-center-both'>
               <FaSignInAlt className='social-icon-menu fa-1x' /> Login

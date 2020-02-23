@@ -14,6 +14,7 @@ import HelpImage from "../Images/help.jpg";
 import Help from "./Help";
 import ForgotPassword from "./ForgotPassword";
 import Architecture from "./Architecture";
+import Services from "./Services";
 import Slider from "../Components/Slider";
 import Home from "./Home";
 
@@ -89,6 +90,25 @@ export default function LoginNextGen() {
     /* align-items: center; */
   `;
 
+  const HomeBackground = styled.div`
+    grid-area: body;
+    @media ${device.tablet} {
+      background-color: #ccc;
+    }
+    background-color: #ccc;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: row;
+    @media ${device.tablet} {
+      justify-content: flex-end;
+    }
+    justify-content: flex-start;
+    /* align-items: center; */
+  `;
+
   return (
     <div className='login-container'>
       <div className='header-item'>
@@ -97,9 +117,9 @@ export default function LoginNextGen() {
       <SidebarMenu />
       <Switch>
         <Route path='/' exact>
-          <div className='body-item'>
+          <HomeBackground>
             <Slider />
-          </div>
+          </HomeBackground>
         </Route>
         <Route path='/login'>
           <LoginBackground>
@@ -119,6 +139,11 @@ export default function LoginNextGen() {
         <Route path='/architecture'>
           <ArchitectureBackground>
             <Architecture />
+          </ArchitectureBackground>
+        </Route>
+        <Route path='/services'>
+          <ArchitectureBackground>
+            <Services />
           </ArchitectureBackground>
         </Route>
         <Route path='/home'>
