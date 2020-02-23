@@ -39,11 +39,11 @@ export default function Slider() {
           <div class='legend'></div>
           <div class='content'>
             <div class='content-txt'>
-              <h1>AWS API Gateway</h1>
+              <h1>API Gateway</h1>
               <h2>
-                Nam ultrices pellentesque facilisis. In semper tellus mollis
-                nisl pulvinar vitae vulputate lorem consequat. Fusce odio
-                tortor, pretium sit amet auctor ut, ultrices vel nibh.
+                API Gateway is a fully managed service that makes it easy for
+                developers to create, publish, maintain, monitor, and secure
+                APIs at any scale
               </h2>
             </div>
           </div>
@@ -57,9 +57,10 @@ export default function Slider() {
             <div class='content-txt'>
               <h1>Function As a Service</h1>
               <h2>
-                Nam ultrices pellentesque facilisis. In semper tellus mollis
-                nisl pulvinar vitae vulputate lorem consequat. Fusce odio
-                tortor, pretium sit amet auctor ut, ultrices vel nibh.
+                Function as a service (FaaS) is a category of cloud computing
+                services that provides a platform allowing customers to develop,
+                run, and manage application functionalities without the
+                complexity of building and maintaining the infrastructure
               </h2>
             </div>
           </div>
@@ -73,9 +74,11 @@ export default function Slider() {
             <div class='content-txt'>
               <h1>Serverless DB</h1>
               <h2>
-                Nam ultrices pellentesque facilisis. In semper tellus mollis
-                nisl pulvinar vitae vulputate lorem consequat. Fusce odio
-                tortor, pretium sit amet auctor ut, ultrices vel nibh.
+                Where the database will automatically start up, shut down, and
+                scale capacity up or down based on your application's needs. It
+                enables you to run your database in the cloud without managing
+                any database instances. It's a simple, cost-effective option for
+                unpredictable workloads and it scales unlimited.
               </h2>
             </div>
           </div>
