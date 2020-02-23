@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
-
 import Parallax1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
-import Parallax3 from "../Images/Cloud-Road.jpeg";
+import Parallax4 from "../Images/cloud-background.jpg";
+import Parallax5 from "../Images/cloud-image-analystics.jpg";
+import Parallax6 from "../Images/cloud-blackboard-stock.jpg";
+
+import Parallax3 from "../Images/cloud-bkgd-image.jpeg";
 import ServerlessApiImage from "../Images/Cloud-image-good-one.jpeg";
 import ServerlessArchImage1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
+import webhosting from "../Images/route53.jpg";
 
 // body, html {
 //     height: 100%;
@@ -61,8 +65,9 @@ const BgImage1 = styled.div`
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
-  background-image: url(${Parallax1});
-  min-height: 100%;
+  background-image: url(${ServerlessApiImage});
+  background-color: skyblue;
+  min-height: 400px;
 `;
 
 const BgImage2 = styled.div`
@@ -70,7 +75,7 @@ const BgImage2 = styled.div`
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
-  background-image: url(${ServerlessApiImage});
+  background-image: url(${webhosting});
   background-color: skyblue;
   min-height: 400px;
 `;
@@ -81,6 +86,33 @@ const BgImage3 = styled.div`
     background-attachment: scroll;
   }
   background-image: url(${Parallax3});
+  min-height: 400px;
+`;
+
+const BgImage4 = styled.div`
+  ${BigImage}
+  @media only screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+  background-image: url(${Parallax4});
+  min-height: 400px;
+`;
+
+const BgImage5 = styled.div`
+  ${BigImage}
+  @media only screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+  background-image: url(${Parallax5});
+  min-height: 400px;
+`;
+
+const BgImage6 = styled.div`
+  ${BigImage}
+  @media only screen and (max-device-width: 1024px) {
+    background-attachment: scroll;
+  }
+  background-image: url(${Parallax6});
   min-height: 400px;
 `;
 
@@ -132,7 +164,7 @@ const Image = styled.img`
 const Architecture = () => {
   return (
     <MainDiv>
-      <BgImage2>
+      <BgImage1>
         <Caption>
           <Span
             style={{
@@ -142,13 +174,8 @@ const Architecture = () => {
             }}
           ></Span>
         </Caption>
-      </BgImage2>
-      {/*
-        <Video autoplay loop id='myVideo'>
-         <source src={video} type='video/mp4' />
-         Your browser does not support HTML5 video.
-         </Video>
-      */}
+      </BgImage1>
+
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
           Hosting a software application on the internet usually involves
@@ -188,6 +215,32 @@ const Architecture = () => {
         </Caption>
       </BgImage2>
 
+      <ParallaxStyle>
+        <p style={{ marginTop: ".1rem" }}>
+          Hosting a software application on the internet usually involves
+          managing some kind of server infrastructure. Typically this means a
+          virtual or physical server that needs to be managed, as well as the
+          operating system and other web server hosting processes required for
+          your application to run. Using a virtual server from a cloud provider
+          such as Amazon or Microsoft does mean the elimination of the physical
+          hardware concerns, but still requires some level of management of the
+          operating system and the web server software processes.
+        </p>
+        <p style={{ marginTop: "1.9rem" }}>
+          With a <strong> Serverless Architecture</strong>, you focus purely on
+          the individual functions in your application code. Services such as
+          AWS Lambda and Microsoft Azure Functions take care of all the physical
+          hardware, virtual machine operating system, and web server software
+          management. You only need to worry about your code isn't it awesome ?
+          Lets dive a bit deeper on the architecture on how you could build a
+          dynamic website fully fucntional that takes care of Hosting, Security,
+          Storage, Database, APIs so on and soforth and this article would focus
+          mainly on AWS offerings.
+          <Image src={ServerlessArchImage1} alt='' />
+        </p>
+      </ParallaxStyle>
+
+      {/* 
       <div style={{ position: "relative" }}>
         <ScrollUpStyle>
           <p>
@@ -196,7 +249,7 @@ const Architecture = () => {
           </p>
         </ScrollUpStyle>
       </div>
-
+      */}
       <BgImage3>
         <Caption>
           <Span
@@ -210,24 +263,32 @@ const Architecture = () => {
           </Span>
         </Caption>
       </BgImage3>
-      <div style={{ position: "relative" }}>
-        <div
-          style={{
-            color: "#ddd",
-            backgroundColor: "#282E34",
-            textAlign: "center",
-            padding: "50px 80px",
-            textAlign: "justify"
-          }}
-        >
-          <p>
-            Scroll up and down to really get the feeling of how Parallax
-            Scrolling works.
-          </p>
-        </div>
-      </div>
+      <ParallaxStyle>
+        <p style={{ marginTop: ".1rem" }}>
+          Hosting a software application on the internet usually involves
+          managing some kind of server infrastructure. Typically this means a
+          virtual or physical server that needs to be managed, as well as the
+          operating system and other web server hosting processes required for
+          your application to run. Using a virtual server from a cloud provider
+          such as Amazon or Microsoft does mean the elimination of the physical
+          hardware concerns, but still requires some level of management of the
+          operating system and the web server software processes.
+        </p>
+        <p style={{ marginTop: "1.9rem" }}>
+          With a <strong> Serverless Architecture</strong>, you focus purely on
+          the individual functions in your application code. Services such as
+          AWS Lambda and Microsoft Azure Functions take care of all the physical
+          hardware, virtual machine operating system, and web server software
+          management. You only need to worry about your code isn't it awesome ?
+          Lets dive a bit deeper on the architecture on how you could build a
+          dynamic website fully fucntional that takes care of Hosting, Security,
+          Storage, Database, APIs so on and soforth and this article would focus
+          mainly on AWS offerings.
+          <Image src={ServerlessArchImage1} alt='' />
+        </p>
+      </ParallaxStyle>
 
-      <BgImage3>
+      <BgImage4>
         <Caption>
           <Span
             style={{
@@ -239,23 +300,85 @@ const Architecture = () => {
             SCROLL UP
           </Span>
         </Caption>
-      </BgImage3>
-      <div style={{ position: "relative" }}>
-        <div
-          style={{
-            color: "#ddd",
-            backgroundColor: "#282E34",
-            textAlign: "center",
-            padding: "50px 80px",
-            textAlign: "justify"
-          }}
-        >
-          <p>
-            Scroll up and down to really get the feeling of how Parallax
-            Scrolling works.
-          </p>
-        </div>
-      </div>
+      </BgImage4>
+      <ParallaxStyle>
+        <p style={{ marginTop: ".1rem" }}>
+          Hosting a software application on the internet usually involves
+          managing some kind of server infrastructure. Typically this means a
+          virtual or physical server that needs to be managed, as well as the
+          operating system and other web server hosting processes required for
+          your application to run. Using a virtual server from a cloud provider
+          such as Amazon or Microsoft does mean the elimination of the physical
+          hardware concerns, but still requires some level of management of the
+          operating system and the web server software processes.
+        </p>
+        <p style={{ marginTop: "1.9rem" }}>
+          With a <strong> Serverless Architecture</strong>, you focus purely on
+          the individual functions in your application code. Services such as
+          AWS Lambda and Microsoft Azure Functions take care of all the physical
+          hardware, virtual machine operating system, and web server software
+          management. You only need to worry about your code isn't it awesome ?
+          Lets dive a bit deeper on the architecture on how you could build a
+          dynamic website fully fucntional that takes care of Hosting, Security,
+          Storage, Database, APIs so on and soforth and this article would focus
+          mainly on AWS offerings.
+          <Image src={ServerlessArchImage1} alt='' />
+        </p>
+      </ParallaxStyle>
+
+      <BgImage5>
+        <Caption>
+          <Span
+            style={{
+              backgroundColor: "transparent",
+              fontSize: "25px",
+              color: "#f7f7f7"
+            }}
+          >
+            SCROLL UP
+          </Span>
+        </Caption>
+      </BgImage5>
+      <ParallaxStyle>
+        <p style={{ marginTop: ".1rem" }}>
+          Hosting a software application on the internet usually involves
+          managing some kind of server infrastructure. Typically this means a
+          virtual or physical server that needs to be managed, as well as the
+          operating system and other web server hosting processes required for
+          your application to run. Using a virtual server from a cloud provider
+          such as Amazon or Microsoft does mean the elimination of the physical
+          hardware concerns, but still requires some level of management of the
+          operating system and the web server software processes.
+        </p>
+        <p style={{ marginTop: "1.9rem" }}>
+          With a <strong> Serverless Architecture</strong>, you focus purely on
+          the individual functions in your application code. Services such as
+          AWS Lambda and Microsoft Azure Functions take care of all the physical
+          hardware, virtual machine operating system, and web server software
+          management. You only need to worry about your code isn't it awesome ?
+          Lets dive a bit deeper on the architecture on how you could build a
+          dynamic website fully fucntional that takes care of Hosting, Security,
+          Storage, Database, APIs so on and soforth and this article would focus
+          mainly on AWS offerings.
+          <Image src={ServerlessArchImage1} alt='' />
+        </p>
+      </ParallaxStyle>
+      <BgImage6>
+        <Caption>
+          <Span
+            style={{
+              backgroundColor: "transparent",
+              fontSize: "25px",
+              color: "#f7f7f7"
+            }}
+          >
+            <strong>
+              {" "}
+              <i> The End</i>
+            </strong>
+          </Span>
+        </Caption>
+      </BgImage6>
     </MainDiv>
   );
 };
