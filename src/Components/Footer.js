@@ -20,6 +20,7 @@ export default function Footer() {
       >
         <FontAwesomeIcon icon={faLinkedinIn} size='2x' />
       </a>
+      {/* 
       <a
         href='https://www.youtube.com/user/AmazonWebServices'
         target='_blank'
@@ -31,6 +32,8 @@ export default function Footer() {
           size='2x'
         />
       </a>
+
+      */}
       <a
         href='https://medium.com/@sureshmunnangi'
         target='_blank'

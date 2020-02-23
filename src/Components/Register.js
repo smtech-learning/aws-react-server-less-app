@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
-import registration from "../Images/registration.png";
+// import registration from "../Images/registration.png";
 import styled, { ThemeProvider } from "styled-components";
 import { StylesProvider } from "@material-ui/styles";
 import TextField from "@material-ui/core/TextField";

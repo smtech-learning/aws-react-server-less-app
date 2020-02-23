@@ -7,8 +7,6 @@ import Parallax2 from "../Images/img_parallax2.jpg";
 import Parallax3 from "../Images/img_parallax3.jpg";
 import ServerlessApiImage from "../Images/ServerlessAPIs-using-Lambda.png";
 
-import video from "../Images/rain.mp4";
-
 // body, html {
 //     height: 100%;
 //     margin: 0;
