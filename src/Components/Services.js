@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
-import Parallax1 from "../Images/img_parallax.jpg";
-import Parallax2 from "../Images/img_parallax2.jpg";
-import Parallax3 from "../Images/img_parallax3.jpg";
+import Parallax1 from "../Images/ServerlessAPIs-using-Lambda.png";
+import Parallax2 from "../Images/ServerlessAPIs-using-Lambda.png";
+import Parallax3 from "../Images/ServerlessAPIs-using-Lambda.png";
 import ServerlessApiImage from "../Images/ServerlessAPIs-using-Lambda.png";
 
 // body, html {

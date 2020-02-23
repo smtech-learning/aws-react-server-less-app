@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
-import Parallax1 from "../Images/img_parallax.jpg";
-import Parallax2 from "../Images/img_parallax2.jpg";
-import Parallax3 from "../Images/img_parallax3.jpg";
-import ServerlessApiImage from "../Images/ServerlessAPIs-using-Lambda.png";
+import Parallax1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
+import Parallax3 from "../Images/Cloud-Road.jpeg";
+import ServerlessApiImage from "../Images/Cloud-image-good-one.jpeg";
+import ServerlessArchImage1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
 
 // body, html {
 //     height: 100%;
@@ -70,7 +70,7 @@ const BgImage2 = styled.div`
   @media only screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
-  background-image: url(${Parallax2});
+  background-image: url(${ServerlessApiImage});
   background-color: skyblue;
   min-height: 400px;
 `;
@@ -116,6 +116,12 @@ const Video = styled.video`
   min-height: 100%;
 `;
 
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  margin: 3rem;
+`;
+
 //   /* Turn off parallax scrolling for tablets and phones */
 //   @media only screen and (max-device-width: 1024px) {
 //     .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -126,11 +132,17 @@ const Video = styled.video`
 const Architecture = () => {
   return (
     <MainDiv>
-      <BgImage1>
+      <BgImage2>
         <Caption>
-          <Span>Serverless Architecture</Span>
+          <Span
+            style={{
+              backgroundColor: "transparent",
+              fontSize: "25px",
+              color: "#f7f7f7"
+            }}
+          ></Span>
         </Caption>
-      </BgImage1>
+      </BgImage2>
       {/*
         <Video autoplay loop id='myVideo'>
          <source src={video} type='video/mp4' />
@@ -138,8 +150,7 @@ const Architecture = () => {
          </Video>
       */}
       <ParallaxStyle>
-        {/* <H3 style={{ textAlign: "center" }}>Parallax Demo</H3> */}
-        <p style={{ marginTop: "1.9rem" }}>
+        <p style={{ marginTop: ".1rem" }}>
           Hosting a software application on the internet usually involves
           managing some kind of server infrastructure. Typically this means a
           virtual or physical server that needs to be managed, as well as the
@@ -159,6 +170,7 @@ const Architecture = () => {
           dynamic website fully fucntional that takes care of Hosting, Security,
           Storage, Database, APIs so on and soforth and this article would focus
           mainly on AWS offerings.
+          <Image src={ServerlessArchImage1} alt='' />
         </p>
       </ParallaxStyle>
 
@@ -171,7 +183,7 @@ const Architecture = () => {
               color: "#f7f7f7"
             }}
           >
-            LESS HEIGHT
+            <strong> Scroll up to see Domain hosting architecture</strong>
           </Span>
         </Caption>
       </BgImage2>
