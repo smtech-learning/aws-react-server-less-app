@@ -10,6 +10,7 @@ import Parallax3 from "../Images/cloud-bkgd-image.jpeg";
 import ServerlessApiImage from "../Images/Cloud-image-good-one.jpeg";
 import ServerlessArchImage1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
 import webhosting from "../Images/route53.jpg";
+import domaindiagram from "../Images/domain-diagram.jpeg";
 
 // body, html {
 //     height: 100%;
@@ -236,7 +237,7 @@ const Architecture = () => {
           dynamic website fully fucntional that takes care of Hosting, Security,
           Storage, Database, APIs so on and soforth and this article would focus
           mainly on AWS offerings.
-          <Image src={ServerlessArchImage1} alt='' />
+          <Image src={domaindiagram} alt='' />
         </p>
       </ParallaxStyle>
 
@@ -259,7 +260,12 @@ const Architecture = () => {
               color: "#f7f7f7"
             }}
           >
-            SCROLL UP
+            <strong>
+              <i>
+                Scroll Up to see architecture on analytics using Kenesis (still
+                serverless)
+              </i>
+            </strong>
           </Span>
         </Caption>
       </BgImage3>
