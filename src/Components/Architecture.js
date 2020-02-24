@@ -11,6 +11,7 @@ import ServerlessApiImage from "../Images/Cloud-image-good-one.jpeg";
 import ServerlessArchImage1 from "../Images/AWS-serverless-thecloudthoughts.jpeg";
 import webhosting from "../Images/route53.jpg";
 import domaindiagram from "../Images/domain-diagram.jpeg";
+import route53 from "../Images/route53.png";
 
 // body, html {
 //     height: 100%;
@@ -42,7 +43,7 @@ const ParallaxStyle = styled.div`
 
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 10px;
   text-align: justify;
 `;
@@ -179,14 +180,27 @@ const Architecture = () => {
 
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
-          Hosting a software application on the internet usually involves
-          managing some kind of server infrastructure. Typically this means a
-          virtual or physical server that needs to be managed, as well as the
-          operating system and other web server hosting processes required for
-          your application to run. Using a virtual server from a cloud provider
-          such as Amazon or Microsoft does mean the elimination of the physical
-          hardware concerns, but still requires some level of management of the
-          operating system and the web server software processes.
+          <span style={{ fontSize: "30px" }}>H</span>osting a software
+          application on the internet usually involves managing some kind of
+          server infrastructure. Typically this means a virtual or physical
+          server that needs to be managed, as well as the operating system and
+          other web server hosting processes required for your application to
+          run. Using a virtual server from a cloud provider such as Amazon or
+          Microsoft does mean the elimination of the physical hardware concerns,
+          but still requires some level of management of the operating system
+          and the web server software processes.
+        </p>
+
+        <p style={{ marginTop: ".1rem" }}>
+          <strong>Serverless applications </strong>don’t require you to
+          provision, scale, and manage any servers. You can build them for
+          nearly any type of application or backend service, and everything
+          required to run and scale your application with high availability is
+          handled for you. Serverless architectures can be used for many types
+          of applications. For example, you can process transaction orders,
+          analyze click streams, clean data, generate metrics, filter logs,
+          analyze social media, or perform IoT device data telemetry and
+          metering.
         </p>
         <p style={{ marginTop: "1.9rem" }}>
           With a <strong> Serverless Architecture</strong>, you focus purely on
@@ -218,27 +232,36 @@ const Architecture = () => {
 
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
-          Hosting a software application on the internet usually involves
-          managing some kind of server infrastructure. Typically this means a
-          virtual or physical server that needs to be managed, as well as the
-          operating system and other web server hosting processes required for
-          your application to run. Using a virtual server from a cloud provider
-          such as Amazon or Microsoft does mean the elimination of the physical
-          hardware concerns, but still requires some level of management of the
-          operating system and the web server software processes.
+          <h1> Domain by GoDaddy, DNS by Route53</h1>
+          <span style={{ fontSize: "30px" }}>F</span>or any webapplication to be
+          available over internet, we need to purchase a Domain and the domain
+          needs to be hosted. A public hosted zone is a container that holds
+          information about how you want to route traffic on the internet for a
+          specific domain, such as cloudthoughts.com, and its subdomains
+          api.cloudthoughts.com. Domain registration is a process by which a
+          registrar such as GoDaddy negotiates with ICANN (Internet Corporation
+          for Assigned Names and Numbers) to register a domain name on your
+          behalf.
         </p>
         <p style={{ marginTop: "1.9rem" }}>
-          With a <strong> Serverless Architecture</strong>, you focus purely on
-          the individual functions in your application code. Services such as
-          AWS Lambda and Microsoft Azure Functions take care of all the physical
-          hardware, virtual machine operating system, and web server software
-          management. You only need to worry about your code isn't it awesome ?
-          Lets dive a bit deeper on the architecture on how you could build a
-          dynamic website fully fucntional that takes care of Hosting, Security,
-          Storage, Database, APIs so on and soforth and this article would focus
-          mainly on AWS offerings.
+          DNS services are offered by GoDaddy, but you don’t have to use them.
+          If you want more flexibility, scalability, etc. you could use another
+          DNS service such as AWS Route53, Google Cloud DNS, NS1, etc. This
+          architecture picked Route53 since this is being hosted on Cloudfront.
+          After you create a hosted zone, you create records that specify how
+          you want to route traffic for the domain and subdomains.
           <Image src={domaindiagram} alt='' />
         </p>
+
+        <p>
+          <strong>
+            <i>
+              Here is how you would configure domain and sub domains in AWS
+              Route53.
+            </i>
+          </strong>
+        </p>
+        <Image src={route53} alt='' />
       </ParallaxStyle>
 
       {/* 
@@ -271,14 +294,10 @@ const Architecture = () => {
       </BgImage3>
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
-          Hosting a software application on the internet usually involves
-          managing some kind of server infrastructure. Typically this means a
-          virtual or physical server that needs to be managed, as well as the
-          operating system and other web server hosting processes required for
-          your application to run. Using a virtual server from a cloud provider
-          such as Amazon or Microsoft does mean the elimination of the physical
-          hardware concerns, but still requires some level of management of the
-          operating system and the web server software processes.
+          <h1> Yet to update the conetnt</h1>
+          Serverless is not just limitted to webapplications, you could use the
+          serverless offerings to build a real time analytics platform and/or
+          processing real time data stream.
         </p>
         <p style={{ marginTop: "1.9rem" }}>
           With a <strong> Serverless Architecture</strong>, you focus purely on
@@ -303,12 +322,17 @@ const Architecture = () => {
               color: "#f7f7f7"
             }}
           >
-            SCROLL UP
+            <strong>
+              {" "}
+              Scroll up to see details on API on Springboot, CI/CD architecture
+              for back end.
+            </strong>
           </Span>
         </Caption>
       </BgImage4>
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
+          <h1> Yet to update the conetnt</h1>
           Hosting a software application on the internet usually involves
           managing some kind of server infrastructure. Typically this means a
           virtual or physical server that needs to be managed, as well as the
@@ -341,12 +365,16 @@ const Architecture = () => {
               color: "#f7f7f7"
             }}
           >
-            SCROLL UP
+            <strong>
+              Scroll up to see details on front-end using React, CI/CD
+              architecture for front end.
+            </strong>
           </Span>
         </Caption>
       </BgImage5>
       <ParallaxStyle>
         <p style={{ marginTop: ".1rem" }}>
+          <h1> Yet to update the conetnt</h1>
           Hosting a software application on the internet usually involves
           managing some kind of server infrastructure. Typically this means a
           virtual or physical server that needs to be managed, as well as the
