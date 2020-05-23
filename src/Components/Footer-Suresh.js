@@ -5,7 +5,7 @@ import {
   faYoutube,
   faMedium,
   faTwitter,
-  faGithub,
+  faGithub
 } from "@fortawesome/free-brands-svg-icons";
 
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <div className='social-icons-container'>
       <a
-        href='https://www.linkedin.com/in/priya-m-7750953a/'
+        href='https://www.linkedin.com/in/suresh-munnangi/'
         target='_blank'
         className='link-style social-icon-footer'
       >
@@ -33,7 +33,7 @@ export default function Footer() {
         />
       </a>
 
-     
+      */}
       <a
         href='https://medium.com/@sureshmunnangi'
         target='_blank'
@@ -55,7 +55,6 @@ export default function Footer() {
       >
         <FontAwesomeIcon style={{ color: "black" }} icon={faGithub} size='2x' />
       </a>
-       */}
     </div>
   );
 }

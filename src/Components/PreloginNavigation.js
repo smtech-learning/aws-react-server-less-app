@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { device } from "./device";
 import logo from "../Images/cloudthoughts-3.png";
+import logoVishnu from "../Images/cloudthoughts-5.png";
+
 import { Route, Switch, Link } from "react-router-dom";
 import HamburgerMenu from "../Components/HamburgerMenu";
 import { useParams, useHistory } from "react-router-dom";
@@ -57,7 +59,7 @@ export default function PreloginNavigation() {
     <Fragment>
       <Nav>
         <Link to='/'>
-          <Image src={logo} alt='logo' />
+          <Image src={logoVishnu} alt='logo' />
         </Link>
         <HamburgerMenu />
 
