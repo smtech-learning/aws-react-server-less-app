@@ -59,7 +59,7 @@ export default function PreloginNavigation() {
     <Fragment>
       <Nav>
         <Link to='/'>
-          <Image src={logoVishnu} alt='logo' />
+          <Image src={logo} alt='logo' />
         </Link>
         <HamburgerMenu />
 
