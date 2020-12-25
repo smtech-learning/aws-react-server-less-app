@@ -157,7 +157,7 @@ export default function LoginNextGen() {
       </Switch>
 
       <div className='footer-item'>
-        <div> @Priya (vishnumunnangi@gmail.com)</div>
+        <div> email:sureshmunnangi@gmail.com</div>
 
         <Footer />
       </div>
