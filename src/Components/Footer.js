@@ -41,6 +41,7 @@ export default function Footer() {
       >
         <FontAwesomeIcon style={{ color: "black" }} icon={faMedium} size='2x' />
       </a>
+      {/*
       <a
         href='https://twitter.com/sureshmunnangi'
         target='_blank'
@@ -48,6 +49,7 @@ export default function Footer() {
       >
         <FontAwesomeIcon icon={faTwitter} size='2x' />
       </a>
+      */}
       <a
         href='https://github.com/smtech-learning?tab=repositories'
         target='_blank'
