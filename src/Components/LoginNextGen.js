@@ -157,7 +157,10 @@ export default function LoginNextGen() {
       </Switch>
 
       <div className='footer-item'>
-        <div> email:sureshmunnangi@gmail.com</div>
+        <div>
+          {" "}
+          <a href='mailto: munnangicloud@gmail.com'>munnangicloud@gmail.com</a>
+        </div>
 
         <Footer />
       </div>
