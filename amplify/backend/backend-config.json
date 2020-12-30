@@ -1,8 +1,10 @@
 {
-	"auth": {
-		"cognito7cfdc2ac": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
-		}
-	}
+  "auth": {
+    "awsreactserverlessapd541e9d8": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
 }
