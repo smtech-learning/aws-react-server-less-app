@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Menu from './Menu';
+import { withAuthenticator, AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 export default class DisplayProducts extends Component {
  
@@ -71,7 +72,7 @@ handlechnage(e) {
         </form>
         
 
-      </div>
+        </div>
     )
   }
 }

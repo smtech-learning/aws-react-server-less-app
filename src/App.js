@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Register from "./Components/Register";
 import Amplify from "aws-amplify";
 import awsmobile from "./aws-exports";
+import { withAuthenticator, AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import {
   BrowserRouter,
   Route,
@@ -19,6 +20,8 @@ Amplify.configure(awsmobile);
 class App extends Component {
   render() {
     return (
+     
+      <div> 
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={LoginNextGen} />
@@ -30,10 +33,15 @@ class App extends Component {
           <Route path='/help' component={LoginNextGen} />
           <Route path='/home' component={Home} />
         </Switch>
-      </BrowserRouter>
+        </BrowserRouter>
+      
+        </div>
+        
     );
   }
 }
 
+
 export default App;
-//export default withAuthenticator(App, true);
+//export default withAuthenticator(App);
+//AmplifyAuthenticator

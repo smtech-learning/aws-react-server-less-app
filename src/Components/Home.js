@@ -7,10 +7,11 @@ import Help from './Help';
 import Logout from './Logout';
 import NotFound from './NotFound';
 import { withRouter } from 'react-router-dom';
-
+import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 export default class Home extends Component {
   render(props) {
-      return (
+    return (
+      <AmplifyAuthenticator>
       <div>
               <Menu />
               <Switch> 
@@ -20,7 +21,8 @@ export default class Home extends Component {
                 <Route path='/home/logout' exact component={Logout} />
                   <Route render={() => { return (<h1> Select the Item above</h1>) }} />
               </Switch>
-      </div>
+        </div>
+        </AmplifyAuthenticator>
     )
   }
 }
